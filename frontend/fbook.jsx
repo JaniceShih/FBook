@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     } else {
         store = configureStore();
     };
-
+    
     // for testing   
     window.mia = {fname: 'Mia', lname: 'Wei', email: 'mia.wei@gmail.com', birthday: '2017-12-05', gender: 'Female',  bio: 'pre-K', password: '123456'};
     window.user = {email: 'shih.janice00@gmail.com', password: '123456' };

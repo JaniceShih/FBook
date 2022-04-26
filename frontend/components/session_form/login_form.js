@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class LoginForm extends React.Component {
     constructor(props){
         super(props); 
@@ -9,6 +10,8 @@ class LoginForm extends React.Component {
         }    
         
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
+        this.openSignupModal = this.openSignupModal.bind(this);
     }
 
     handleInput(type) {
@@ -19,69 +22,97 @@ class LoginForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // log in user
-        // this.props.history.push: used to move from the current page to another one.
-           this.props.login(this.state).then(
+        this.props.login(this.state).then(
             () => this.props.history.push("./")
-        );;
+        );
     }
+
+    loginDemo(e) {
+        e.preventDefault();
+
+        this.setState({
+            email: "mia.wei@gmail.com",
+            password: "123456" }, 
+        () => {
+            this.props.login(this.state)
+        });
+    };
+
+    openSignupModal(e) {
+        e.preventDefault();
+        this.props.openModal("create_user");
+    };
+    
+
 
     render(){
         return(
-            <div> 
-
-                <div>
-                    <div>
-                        Fbook
+            <div className="flex login"> 
+                <div className="block">
+                    <div className="block__heading">
+                        jacebook
                     </div>
-                    <div>
-                        Connect with friends and the world around you on Facebook.
-                    </div>                
+                    <h2>
+                        Connect with friends and the world around you on Jacebook.
+                    </h2>                                  
                 </div>
 
-                <form > 
-                    <ul>
-                        {this.props.errors.map((error, i) => {
-                            return (<li key={`error-${i}`}>{error}</li>)
-                        })}
-                    </ul>               
+                <div className="block">
+                    <form className="login__form"> 
+                        {/* <ul>
+                            {this.props.errors.map((error, i) => {
+                                return (<li key={`error-${i}`}>{error}</li>)
+                            })}
+                        </ul>                */}
 
-                    <div>
-                        <label>
-                            <input 
-                                type="text"
-                                value={this.state.email}
-                                placeholder="Email or phone number" 
-                                onChange={this.handleInput("email")}                               
-                            />
-                        </label>
+                        <div>
+                            <label>
+                                <input 
+                                    type="text"
+                                    className="form__input"
+                                    value={this.state.email}
+                                    placeholder="Email or phone number" 
+                                    onChange={this.handleInput("email")}                               
+                                />
+                            </label>
 
-                        <label>
-                            <input
-                                type="password"
-                                value={this.state.password}
-                                placeholder="Password"  
-                                onChange={this.handleInput("password")}                              
-                            />
-                        </label>
-                    </div>
+                            <label>
+                                <input
+                                    type="password"
+                                    className="form__input"
+                                    value={this.state.password}
+                                    placeholder="Password"  
+                                    onChange={this.handleInput("password")}                              
+                                />
+                            </label>
+                        </div>
 
-                    <div >
-                        <button
-                             onClick={this.handleSubmit}> 
-                                Log In 
-                        </button>
-                    </div>
-                    
-                    <div>                  
-                            Demo Log In?                     
-                    </div>
+                        <div >
+                        
+                            <button className="btn btn--primary" onClick={this.handleSubmit}> 
+                                    Log In 
+                            </button>
+                        </div>
+                        
+                        <div>                        
+                            <a onClick={this.loginDemo} className="link-demo"> Demo Log In? </a>                                                
+                        </div>
+    
 
-                    <div>                     
-                        <button > Create new account  </button>
-                    </div>
+                        <div>
+                        
+                            <button 
+                                className="btn btn--create"
+                                onClick={this.openSignupModal}>
+                                Create new account 
+                            </button>
+                        </div>                 
 
-                </form>
+                    </form>
+
+                </div>
+
+               
 
             </div>
             

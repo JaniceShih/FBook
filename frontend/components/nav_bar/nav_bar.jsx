@@ -10,9 +10,10 @@ class NavBar extends React.Component {
     render() {
 
         return(
-            <nav>
-                Hello {this.props.currentUser.fname} 
-               <button onClick={this.props.logout}>Logout</button>
+            <nav className="nav collapsible">
+                <div> Hello {this.props.currentUser.fname} 
+               <button onClick={this.props.logout}>Logout</button> </div>
+               
             </nav>
         );
     };
