@@ -173,7 +173,7 @@ class SignupFrom extends React.Component{
                     <div >
                       
                         <button  className="btn btn--create" onClick={this.handleSubmit}> 
-                            Sing Up
+                             Sign Up
                         </button>
                     </div>
                 </form>
