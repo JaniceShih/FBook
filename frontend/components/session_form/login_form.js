@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
 
         this.setState({
-            email: "mia.wei@gmail.com",
+            email: "aastudent@gmail.com",
             password: "123456" }, 
         () => {
             this.props.login(this.state)
@@ -47,8 +47,9 @@ class LoginForm extends React.Component {
 
     render(){
         return(
-            <div className="flex login"> 
-                <div className="block">
+            <div className="login__page">
+            <div className="grid grid--1x2 login"> 
+                <div className="block block__header">
                     <div className="block__heading">
                         jacebook
                     </div>
@@ -114,6 +115,7 @@ class LoginForm extends React.Component {
 
                
 
+            </div>
             </div>
             
         )
