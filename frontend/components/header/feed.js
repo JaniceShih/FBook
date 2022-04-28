@@ -2,25 +2,8 @@ import React from 'react'
 import MessageSender from './message_sender'
 import StoryReel from './storyreel'
 import Post from'./post'
+import PostIndexContainer from './../posts/posts_container'
 
-// function Feed() {
-//   return (
-//     <div className='feed'>
-//         {/* <StoryReel /> */}
-//         {/* <MessageSender />   */}
-//         {/* <Post      
-//         profilePic=""
-//         message="a/A Ruby"
-//         image="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/ruby/logo.png"
-//         /> */}
-//         <Post username={"Ruby"}/>
-//         <Post username={"Rails"} />
-//         <Post username={"JavaScript"} />
-//         <Post username={"React/Redux"} />
-   
-//     </div>
-//   )
-// }
 
 class Feed extends React.Component{
 
@@ -54,7 +37,9 @@ class Feed extends React.Component{
 
       {/* <StoryReel />  */}
       <MessageSender />
-      {this.state.posts.map(post => <Post body={post.body} image={post.photoURL} updated_at={post.updated_at}/>)}
+      {this.state.posts.map((post,idx) => <Post body={post.body} image={post.photoURL} updated_at={post.updated_at} key={idx}/> )}
+      {/* <PostIndexContainer /> */}
+
       </div>
     )
   }

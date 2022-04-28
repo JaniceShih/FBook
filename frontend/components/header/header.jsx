@@ -9,7 +9,7 @@ import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserC
 
 import Avatar from '@mui/material/Avatar';
 
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 
 import AddIcon from '@mui/icons-material/Add';
 import ForumIcon from '@mui/icons-material/Forum';
@@ -56,8 +56,12 @@ class Header extends React.Component {
                 <div className="header__info">
                     <Avatar src={window.demouserimg}/>
                     <h4>a/A student</h4>
-
-                    <IconButton >
+                    <AddIcon />
+                    <ForumIcon />
+                    <NotificationsActiveIcon />
+                    <ExpandMoreIcon />
+                    <a onClick={this.props.logout}> <ExitToAppRoundedIcon /> </a>
+                    {/* <IconButton >
                         <AddIcon />
                     </IconButton>
                     <IconButton>
@@ -65,13 +69,13 @@ class Header extends React.Component {
                     </IconButton>
                     <IconButton>
                         <NotificationsActiveIcon />
-                        </IconButton>
+                    </IconButton>
                     <IconButton>                    
                         <ExpandMoreIcon />
                     </IconButton>
                     <IconButton>                    
                             <a onClick={this.props.logout}> <ExitToAppRoundedIcon /> </a>
-                    </IconButton>
+                    </IconButton> */}
                 </div>
             </div>
         </div>

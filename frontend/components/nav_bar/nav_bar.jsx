@@ -9,7 +9,7 @@ import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserC
 
 import Avatar from '@mui/material/Avatar';
 
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 
 import AddIcon from '@mui/icons-material/Add';
 import ForumIcon from '@mui/icons-material/Forum';
@@ -56,8 +56,22 @@ class NavBar extends React.Component {
                 <div className="header__info">
                     <Avatar src={window.demouserimg}/>
                     <h4>a/A student</h4>
-
-                    <IconButton>
+                    <div className='header__info--option'>
+                        <AddIcon sx={{fontSize: 25 }}/>
+                    </div>
+                    <div className='header__info--option'>
+                        <ForumIcon sx={{fontSize: 25 }}/>
+                    </div>
+                    <div className='header__info--option'>
+                        <NotificationsActiveIcon sx={{fontSize: 25 }}/>
+                    </div>
+                    <div className='header__info--option'>
+                         <ExpandMoreIcon sx={{fontSize: 25 }}/>
+                    </div>
+                    <div className='header__info--option'>
+                        <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
+                    </div>
+                    {/* <IconButton>
                         <AddIcon sx={{fontSize: 25 }}/>
                     </IconButton>
                     <IconButton>
@@ -71,7 +85,7 @@ class NavBar extends React.Component {
                     </IconButton>
                     <IconButton>                    
                             <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
-                    </IconButton>
+                    </IconButton> */}
                 </div>
             </div>
         </div>

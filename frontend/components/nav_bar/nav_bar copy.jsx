@@ -14,7 +14,7 @@ import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 
 import Avatar from '@mui/material/Avatar';
 
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 
 import AddIcon from '@mui/icons-material/Add';
 import ForumIcon from '@mui/icons-material/Forum';
@@ -45,7 +45,12 @@ class NavBar extends React.Component {
                     {/* <AccountCircleRoundedIcon sx={{ fontSize: 35 }} /> */}
                     
                         <Avatar src={window.demouserimg}  sx={{ width: 35, height: 35 }} />  {this.props.currentUser.fname}
-                    
+                        <AddIcon sx={{ fontSize: 28 }}/>
+                        <ForumIcon sx={{ fontSize: 28 }}/>
+                        <NotificationsActiveIcon sx={{ fontSize: 28 }}/>
+                        <ExpandMoreIcon sx={{ fontSize: 28 }}/>
+                        <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{ fontSize: 28 }}/> </a>
+{/* 
                         <IconButton>
                             <AddIcon sx={{ fontSize: 28 }}/>
                         </IconButton>
@@ -54,13 +59,13 @@ class NavBar extends React.Component {
                         </IconButton>
                         <IconButton>
                             <NotificationsActiveIcon sx={{ fontSize: 28 }}/>
-                            </IconButton>
+                        </IconButton>
                         <IconButton>                    
                             <ExpandMoreIcon sx={{ fontSize: 28 }}/>
                         </IconButton>
                         <IconButton>                    
                         <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{ fontSize: 28 }}/> </a>
-                        </IconButton>
+                        </IconButton> */}
                     
                 </div>               
             </nav>

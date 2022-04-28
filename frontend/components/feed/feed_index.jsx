@@ -5,22 +5,19 @@ import Sidebar from './../header/sidebar'
 import Feed from './../header/feed'
 import FriendsList from './../header/friend_list'
 
+import PostIndexContainer from "../posts/posts_container"
+
 const FeedIndex = (props) => {
     return (
         <>
-              <NavBarContainer />
+            <NavBarContainer />
  
             <div className="app app__body">
                 <Sidebar />
-                <Feed />
-                {/* widgets / Contacts */}
-
+                {/* <Feed /> */}
+                <PostIndexContainer />
                 <FriendsList />
-
              </div> 
-
-            
-
         </>
     );
 };
