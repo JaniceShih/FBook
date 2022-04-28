@@ -30491,3 +30491,53 @@ Processing by Api::PostsController#index as JSON
 Completed 200 OK in 62ms (Views: 43.2ms | ActiveRecord: 16.7ms)
 
 
+Started GET "/" for ::1 at 2022-04-28 14:29:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "85tgM5IeLw0zpXwGqvvtEQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2022-04-28 14:29:59 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:8
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:8
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  Rendered api/posts/index.json.jbuilder (10.2ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5e728a2d0956c96d70fe0dfd0202ffc841e49c9a/react.jpg" for ::1 at 2022-04-28 14:29:59 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--92418187fe1cdad25412cbf1eed4a0b6628b2d77/react-coding.jpg" for ::1 at 2022-04-28 14:29:59 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5e728a2d0956c96d70fe0dfd0202ffc841e49c9a", "filename"=>"react"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/janiceshih/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.7.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.0ms) [0m[34mGenerated URL for file at key: TbfM2GGkuPXtbPuBJWgyYsii (https://active-storage-jacebook-dev.s3.amazonaws.com/TbfM2GGkuPXtbPuBJWgyYsii?response-content-disposition=inline%3B%20filename%3D%22react.jpg%22%3B%20filename%2A%3DUTF-8%27%27react.jpg&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYDZIUWZUM64Y7LFJ%2F20220428%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220428T182959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fd81bc612c1298d7a07f9e658a0399c570e1871e3b9f8cc509179db66dd5e86a)[0m
+Redirected to https://active-storage-jacebook-dev.s3.amazonaws.com/TbfM2GGkuPXtbPuBJWgyYsii?response-content-disposition=inline%3B%20filename%3D%22react.jpg%22%3B%20filename%2A%3DUTF-8%27%27react.jpg&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYDZIUWZUM64Y7LFJ%2F20220428%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220428T182959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fd81bc612c1298d7a07f9e658a0399c570e1871e3b9f8cc509179db66dd5e86a
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--92418187fe1cdad25412cbf1eed4a0b6628b2d77", "filename"=>"react-coding"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/janiceshih/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.7.1/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: yVZmf3L6DXwr2yJTcLC5xa16 (https://active-storage-jacebook-dev.s3.amazonaws.com/yVZmf3L6DXwr2yJTcLC5xa16?response-content-disposition=inline%3B%20filename%3D%22react-coding.jpg%22%3B%20filename%2A%3DUTF-8%27%27react-coding.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYDZIUWZUM64Y7LFJ%2F20220428%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220428T182959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e923955406cddc5443b1a44577840edf9085a91a7adc750d47aa4e93d65f89b1)[0m
+Redirected to https://active-storage-jacebook-dev.s3.amazonaws.com/yVZmf3L6DXwr2yJTcLC5xa16?response-content-disposition=inline%3B%20filename%3D%22react-coding.jpg%22%3B%20filename%2A%3DUTF-8%27%27react-coding.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYDZIUWZUM64Y7LFJ%2F20220428%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220428T182959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e923955406cddc5443b1a44577840edf9085a91a7adc750d47aa4e93d65f89b1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
