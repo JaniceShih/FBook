@@ -5,17 +5,20 @@ import FeedIndex from "./feed/feed_index"
 import ModalContainer from "./modal/modal_container";
 
 import Header from "./header/header";
-
+import Sidebar from './header/sidebar'
+import Feed from './header/feed'
 
 
 const App = () => {
     return(
         <>    
-            {/* <Header /> */}
-            {/* App body */}
-                 {/* sidebar */}
-                 {/* feed */}
+            {/* <Header />
+            <div className="app app__body">
+                <Sidebar />
+                <Feed /> */}
                    {/* widgets / Contacts */}
+
+            {/* </div> */}
 
 
            <ModalContainer />

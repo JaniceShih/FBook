@@ -1,16 +1,11 @@
-import React from "react";
-import SearchIcon from '@mui/icons-material/Search';
+import React from 'react'
 
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import StorefrontIcon from '@mui/icons-material/Storefront';
-// import GroupsIcon from '@mui/icons-material/Groups';
-import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
-// import AirplayIcon from '@mui/icons-material/Airplay';
+import SearchIcon from '@mui/icons-material/Search';
+import HomeIcon from '@mui/icons-material/Home';
+import FlagIcon from '@mui/icons-material/Flag';
 import SubscriptionsOutlinedIcon from '@mui/icons-material/SubscriptionsOutlined';
-import AutoAwesomeMosaicOutlinedIcon from '@mui/icons-material/AutoAwesomeMosaicOutlined';
-// import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
-import CircleNotificationsRoundedIcon from '@mui/icons-material/CircleNotificationsRounded';
-import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 
 import Avatar from '@mui/material/Avatar';
 
@@ -20,7 +15,7 @@ import AddIcon from '@mui/icons-material/Add';
 import ForumIcon from '@mui/icons-material/Forum';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -29,43 +24,59 @@ class NavBar extends React.Component {
     }
     
     render() {
+    return (
+        <div className='header'>
+            <div  className='header__left'>
+                <img src={window.jacebook} />
+                <div className='header__input'>
+                    <SearchIcon />
+                    <input type="text" placeholder='Search JsceBook'/>
+                </div>
+            </div>
 
-        return(
-            <nav className="nav">
-               
-                <img className="nav__logo" src={window.jacebook} />
-                <ul className="list nav__list collapsible__content">
-                    <li className="nav__item"><a><HomeOutlinedIcon sx={{ fontSize: 35 }} /></a> </li>
-                    <li className="nav__item"><SubscriptionsOutlinedIcon sx={{ fontSize: 35 }} /></li>
-                    <li className="nav__item"><StorefrontIcon sx={{ fontSize: 35 }} /></li>
-                    <li className="nav__item"><SupervisedUserCircleRoundedIcon sx={{ fontSize: 35 }} /></li>
-                    <li className="nav__item"><AutoAwesomeMosaicOutlinedIcon sx={{ fontSize: 35 }} /></li>
-                </ul>  
-                <div  className="nav__right">
-                    {/* <AccountCircleRoundedIcon sx={{ fontSize: 35 }} /> */}
-                    
-                        <Avatar src={window.demouserimg}  sx={{ width: 35, height: 35 }} />  {this.props.currentUser.fname}
-                    
-                        <IconButton>
-                            <AddIcon sx={{ fontSize: 28 }}/>
+            <div  className='header__center'>
+                <div className='header__option header__option--active'> 
+                    <HomeIcon  fontSize="large" />
+                </div>
+                <div className='header__option'> 
+                    <FlagIcon  fontSize="large" />
+                </div>
+                <div className='header__option'> 
+                    <SubscriptionsOutlinedIcon  fontSize="large" />
+                </div>
+                <div className='header__option'> 
+                    <StorefrontOutlinedIcon  fontSize="large" />
+                </div>
+                <div className='header__option'>              
+                    <SupervisedUserCircleRoundedIcon  fontSize="large" />
+                </div>
+            </div>
+
+            <div  className='header__right'>
+                <div className="header__info">
+                    <Avatar src={window.demouserimg}/>
+                    <h4>a/A student</h4>
+
+                    <IconButton>
+                        <AddIcon sx={{fontSize: 25 }}/>
+                    </IconButton>
+                    <IconButton>
+                        <ForumIcon sx={{fontSize: 25 }}/>
+                    </IconButton>
+                    <IconButton>
+                        <NotificationsActiveIcon sx={{fontSize: 25 }}/>
                         </IconButton>
-                        <IconButton>
-                            <ForumIcon sx={{ fontSize: 28 }}/>
-                        </IconButton>
-                        <IconButton>
-                            <NotificationsActiveIcon sx={{ fontSize: 28 }}/>
-                            </IconButton>
-                        <IconButton>                    
-                            <ExpandMoreIcon sx={{ fontSize: 28 }}/>
-                        </IconButton>
-                        <IconButton>                    
-                        <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{ fontSize: 28 }}/> </a>
-                        </IconButton>
-                    
-                </div>               
-            </nav>
-        );
-    };
-};
+                    <IconButton>                    
+                        <ExpandMoreIcon sx={{fontSize: 25 }}/>
+                    </IconButton>
+                    <IconButton>                    
+                            <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
+                    </IconButton>
+                </div>
+            </div>
+        </div>
+    )
+    }
+}
 
 export default NavBar;
