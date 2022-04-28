@@ -1,6 +1,6 @@
 import React from 'react';
 import PostIndexItem from './posts_index_item'
-import MessageSender from '../header/message_sender'
+import CreatePostContainer from './create_post_container'
 
 
 class PostIndex extends React.Component{
@@ -8,14 +8,18 @@ class PostIndex extends React.Component{
     componentDidMount(){
         this.props.fetchPosts();
     }
+    // componentDidUpdate(){
+    //     this.props.fetchPosts();
+    // }
 
     render(){      
         // debugger
+        // console.log(this.props);
         const {posts} = this.props;
         return(
             <div className='feed'>
 
-                <MessageSender />
+                <CreatePostContainer />
                 {
                     posts.reverse().map(
                         allposts => 
@@ -23,7 +27,7 @@ class PostIndex extends React.Component{
                             (post,idx)=> 
                                 <PostIndexItem 
                                     body={post.body} 
-                                    image={post.photoURL} 
+                                    image={post.photoUrl} 
                                     updated_at={post.updated_at} 
                                     fname={post.fname} 
                                     key={idx}

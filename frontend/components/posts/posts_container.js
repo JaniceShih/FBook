@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchPosts, deletePost } from '../../actions/post_actions';
+import { fetchPosts } from '../../actions/post_actions';
 import PostIndex from './posts_index';
 
 const mSTP = state =>({
-    posts: Object.values(state.entities.posts)
+    posts: Object.values(state.entities.posts),
+    currentUser: state.session.currentUser     
 })
 
 const mDTP = dispatch =>({

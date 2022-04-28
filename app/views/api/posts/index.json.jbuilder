@@ -1,6 +1,6 @@
 json.array! @posts do |post|
     # json.extract! post, :id, :body, :updated_at
-    # json.photoURL url_for(post.photo)
+    # json.photoUrl url_for(post.photo)
 
 
     json.set! post.id do
@@ -9,7 +9,7 @@ json.array! @posts do |post|
 
 
         if post.photo.attached?
-            json.photoURL url_for(post.photo)
+            json.photoUrl url_for(post.photo)
         end
     end
 end

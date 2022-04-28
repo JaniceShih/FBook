@@ -1,5 +1,5 @@
 import React from 'react'
-import MessageSender from './message_sender'
+// import MessageSender from './message_sender.js_'
 import StoryReel from './storyreel'
 import Post from'./post'
 import PostIndexContainer from './../posts/posts_container'
@@ -36,8 +36,8 @@ class Feed extends React.Component{
       <div className='feed'>
 
       {/* <StoryReel />  */}
-      <MessageSender />
-      {this.state.posts.map((post,idx) => <Post body={post.body} image={post.photoURL} updated_at={post.updated_at} key={idx}/> )}
+      {/* <MessageSender /> */}
+      {this.state.posts.map((post,idx) => <Post body={post.body} image={post.photoUrl} updated_at={post.updated_at} key={idx}/> )}
       {/* <PostIndexContainer /> */}
 
       </div>
