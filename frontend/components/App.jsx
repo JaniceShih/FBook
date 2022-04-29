@@ -12,14 +12,6 @@ import Feed from './header/feed'
 const App = () => {
     return(
         <>    
-            {/* <Header />
-            <div className="app app__body">
-                <Sidebar />
-                <Feed /> */}
-                   {/* widgets / Contacts */}
-
-            {/* </div> */}
-
 
            <ModalContainer />
            <ProtectedRoute exact path="/" component={FeedIndex}/>

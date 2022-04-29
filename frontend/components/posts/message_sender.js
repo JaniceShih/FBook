@@ -42,12 +42,6 @@ class MessageSender extends React.Component {
     }
     formData.append('post[user_id]', this.state.user_id);
 
-    for (var value of formData.values()) {
-      // console.log(value);
-   }
-    // console.log(formData);
-    this.props.createPost(formData);
-
     this.setState({
       body: '',
       photoFile: null,
@@ -55,6 +49,13 @@ class MessageSender extends React.Component {
       user_id: this.props.post.user_id
     })
 
+    this.props.createPost(formData);
+    // debugger
+    // this.props.createPost(formData).then(
+    //   () => this.props.history.push("/")
+    // );
+    // this.props.fetchPosts();
+    // debugger;
     
   }
 

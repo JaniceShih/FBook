@@ -4,37 +4,45 @@ import CreatePostContainer from './create_post_container'
 
 
 class PostIndex extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            posts: this.props.posts
+        }
+    }
 
     componentDidMount(){
+        // debugger
         this.props.fetchPosts();
     }
-    // componentDidUpdate(){
-    //     this.props.fetchPosts();
-    // }
 
     render(){      
-        // debugger
-        // console.log(this.props);
-        const {posts} = this.props;
+        // debugger        
+        const {posts, deletePost} = this.props;
+    
         return(
-            <div className='feed'>
-
-                <CreatePostContainer />
+            <div className='feed'>               
+                <div>
+                     <CreatePostContainer />
+                </div>
+                <div>
                 {
                     posts.reverse().map(
-                        allposts => 
-                        Object.values(allposts).map(
+                        // post => 
+                        // Object.values(allposts).map(
                             (post,idx)=> 
                                 <PostIndexItem 
-                                    body={post.body} 
-                                    image={post.photoUrl} 
-                                    updated_at={post.updated_at} 
-                                    fname={post.fname} 
-                                    key={idx}
+                                    post={post}
+                                    deletePost = {deletePost}
+                                    key ={idx}
                             />
-                        )
+                        // )
                     )                    
                 }
+
+                </div>
+                
+              
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/post_actions';
+import { fetchPosts, deletePost } from '../../actions/post_actions';
 import PostIndex from './posts_index';
 
 const mSTP = state =>({
@@ -8,7 +8,8 @@ const mSTP = state =>({
 })
 
 const mDTP = dispatch =>({
-    fetchPosts: ()=> dispatch(fetchPosts())
+    fetchPosts: ()=> dispatch(fetchPosts()),
+    deletePost: (postId)=> dispatch(deletePost(postId))
 })
 
 export default connect(mSTP, mDTP)(PostIndex);
