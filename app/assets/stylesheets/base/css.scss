@@ -115,6 +115,7 @@
     display: none;
     padding: 25px 10px;
     flex: 0.33;
+    position: fixed;
 }
 
 
@@ -140,7 +141,7 @@
     color: #2e81f4;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1050px) {
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -369,7 +370,7 @@
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     // padding: 12px 16px;
-    top: 40px;
+    top: 35px;
     left: -150px;
     z-index: 1;
 }
@@ -454,6 +455,8 @@
     display: none;
     padding: 25px 10px;
     flex: 0.33;
+    position: fixed;
+    right: 0;
 }
 
 
@@ -473,7 +476,7 @@
 }
 
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 1250px) {
     .friendslist {
       display: flex;
       flex-direction: column;

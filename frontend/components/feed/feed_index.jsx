@@ -1,7 +1,7 @@
 import React from "react";
 import NavBarContainer from "../nav_bar/nav_bar_container";
-import Sidebar from './sidebar'
-import FriendsList from './friend_list'
+import SidebarContainer from './../sidebar/sidebar_container'
+import FriendsContainer from  './../friends/friends_container'
 import PostIndexContainer from "../posts/posts_index_container"
 
 
@@ -11,10 +11,10 @@ const FeedIndex = () => {
             <NavBarContainer />
  
             <div className="app app__body">
-                <Sidebar />                
+                <SidebarContainer />                
                 <PostIndexContainer />
-                <FriendsList />
-             </div> 
+                <FriendsContainer />
+            </div> 
         </>
     )
 }

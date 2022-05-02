@@ -5,7 +5,9 @@ import { openModal } from "../../actions/modal_actions";
 
 const mSTP = state =>({
     posts: state.entities.posts,
-    currentUser: state.session.currentUser     
+    // followers: state.entities.users[state.session.id].followers,
+    // following: state.entities.users[state.session.id].following,
+    currentUser: state.entities.users[state.session.currentUser]    
 })
 
 const mDTP = dispatch =>({

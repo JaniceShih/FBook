@@ -73,8 +73,8 @@ class PostForm extends React.Component {
           </div>
 
           <div  className="form__avatar">
-                <Avatar src={window.demouserimg}/>
-                <p> a/A Student</p>
+                <Avatar src={this.props.currentUser.photoUrl}/>
+                <p> {this.props.currentUser.fname}</p>
           </div>
         
           <div >
@@ -83,7 +83,7 @@ class PostForm extends React.Component {
                 <div className='from__input' >
                 <input 
                   value={this.state.body}
-                  placeholder={`What's on your mind`} 
+                  placeholder={` What's on your mind? `} 
                   onChange={this.update('body')}/>                    
                 </div>               
 

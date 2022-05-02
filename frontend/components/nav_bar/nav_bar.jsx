@@ -24,72 +24,60 @@ class NavBar extends React.Component {
     }
     
     render() {
-    return (
-        <div className='header'>
-            <div  className='header__left'>
-                <img src={window.jacebook} />
-                <div className='header__input'>
-                    <SearchIcon />
-                    <input type="text" placeholder='Search JsceBook'/>
+        const {currentUser} = this.props;
+        // console.log(currentUser);
+        return (
+            <div className='header'>
+                <div  className='header__left'>
+                    <img src={window.jacebook} />
+                    <div className='header__input'>
+                        <SearchIcon />
+                        <input type="text" placeholder='Search JsceBook'/>
+                    </div>
                 </div>
-            </div>
 
-            <div  className='header__center'>
-                <div className='header__option header__option--active'> 
-                    <HomeIcon  fontSize="large" />
+                <div  className='header__center'>
+                    <div className='header__option header__option--active'> 
+                        <HomeIcon  fontSize="large" />
+                    </div>
+                    <div className='header__option'> 
+                        <FlagIcon  fontSize="large" />
+                    </div>
+                    <div className='header__option'> 
+                        <SubscriptionsOutlinedIcon  fontSize="large" />
+                    </div>
+                    <div className='header__option'> 
+                        <StorefrontOutlinedIcon  fontSize="large" />
+                    </div>
+                    <div className='header__option'>              
+                        <SupervisedUserCircleRoundedIcon  fontSize="large" />
+                    </div>
                 </div>
-                <div className='header__option'> 
-                    <FlagIcon  fontSize="large" />
-                </div>
-                <div className='header__option'> 
-                    <SubscriptionsOutlinedIcon  fontSize="large" />
-                </div>
-                <div className='header__option'> 
-                    <StorefrontOutlinedIcon  fontSize="large" />
-                </div>
-                <div className='header__option'>              
-                    <SupervisedUserCircleRoundedIcon  fontSize="large" />
-                </div>
-            </div>
 
-            <div  className='header__right'>
-                <div className="header__info">
-                    <Avatar src={window.demouserimg}/>
-                    <h4>a/A student</h4>
-                    <div className='header__info--option'>
-                        <AddIcon sx={{fontSize: 25 }}/>
-                    </div>
-                    <div className='header__info--option'>
-                        <ForumIcon sx={{fontSize: 25 }}/>
-                    </div>
-                    <div className='header__info--option'>
-                        <NotificationsActiveIcon sx={{fontSize: 25 }}/>
-                    </div>
-                    <div className='header__info--option'>
-                         <ExpandMoreIcon sx={{fontSize: 25 }}/>
-                    </div>
-                    <div className='header__info--option'>
-                        <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
-                    </div>
-                    {/* <IconButton>
-                        <AddIcon sx={{fontSize: 25 }}/>
-                    </IconButton>
-                    <IconButton>
-                        <ForumIcon sx={{fontSize: 25 }}/>
-                    </IconButton>
-                    <IconButton>
-                        <NotificationsActiveIcon sx={{fontSize: 25 }}/>
-                        </IconButton>
-                    <IconButton>                    
-                        <ExpandMoreIcon sx={{fontSize: 25 }}/>
-                    </IconButton>
-                    <IconButton>                    
+                <div  className='header__right'>
+                    <div className="header__info">
+                        <Avatar src={currentUser.photoUrl}/>
+                        <h4> {currentUser.fname} </h4>
+                        <div className='header__info--option'>
+                            <AddIcon sx={{fontSize: 25 }}/>
+                        </div>
+                        <div className='header__info--option'>
+                            <ForumIcon sx={{fontSize: 25 }}/>
+                        </div>
+                        <div className='header__info--option'>
+                            <NotificationsActiveIcon sx={{fontSize: 25 }}/>
+                        </div>
+                        <div className='header__info--option'>
+                            <ExpandMoreIcon sx={{fontSize: 25 }}/>
+                        </div>
+                        <div className='header__info--option'>
                             <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
-                    </IconButton> */}
+                        </div>
+                      
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
     }
 }
 

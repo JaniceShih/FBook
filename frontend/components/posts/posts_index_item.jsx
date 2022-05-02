@@ -31,20 +31,40 @@ class PostIndexItem extends React.Component{
  }
 
   render(){
-    const {post} = this.props;
+    const {currentUser, post, friendIds} = this.props; 
+
+    // const friendIds = [currentUser.id];
+    // Object.values(followers).map(friend=> console.log(friendIds.push(friend.id)));
+    // Object.values(following).map(friend=> console.log(friendIds.push(friend.id)));
+
+
+    if(!friendIds.includes(post.user_id)) {
+        return null;
+    } 
+
+    let post__menu = '';
+    console.log(post.user_id);
+    console.log( currentUser.id);
+    if(post.user_id === currentUser.id){
+       post__menu = <p onClick={this.handleClick} className="post__menu">...</p>;
+    }
+
 
     return (
       <div className='post'>
         <div className='post__top'>
           <div className='post__top--left'>
-            <Avatar className='post__avatar'/>
+            <Avatar /> 
             <div className='post__topinfo'>
-              <h3>{post.fname}</h3>
+              <h3>{post.fname + ' ' + post.lname}</h3>
               <p>{post.updated_at}</p>            
             </div>
           </div>
+          
           <div className="post__top__right">
-              <p onClick={this.handleClick} className="post__menu">...</p>   
+
+               {post__menu}
+
               <div className="post__top__right--menu">
                 <div className="post__option">
                   <ModeEditOutlineOutlinedIcon />
@@ -57,6 +77,8 @@ class PostIndexItem extends React.Component{
                
               </div>                  
           </div>
+          
+
         </div>
         
         <div className="post__buttom">      

@@ -10,7 +10,8 @@ const mSTP = state =>({
         photoFile: null,
         photoUrl: state.ui.modal.post.photoUrl,
         user_id: state.session.currentUser 
-    },    
+    },
+    currentUser: state.entities.users[state.session.currentUser] ,    
     formType: 'Edit Post'    
 })
 

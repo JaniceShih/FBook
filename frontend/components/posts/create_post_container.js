@@ -11,6 +11,7 @@ const mSTP = state =>({
         photoUrl: null,
         user_id: state.session.currentUser 
     },
+    currentUser: state.entities.users[state.session.currentUser] ,
     formType: 'Create Post'    
 })
 

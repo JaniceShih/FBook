@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
 
         this.setState({
-            email: "aastudent@gmail.com",
+            email: "demo@gmail.com",
             password: "123456" }, 
         () => {
             this.props.login(this.state)
@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
     render(){
 
         const errors = this.props.errors;
-        console.log(errors);
+        // console.log(errors);
 
         return(
             <div className="login__page">

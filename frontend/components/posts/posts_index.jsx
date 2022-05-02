@@ -41,18 +41,23 @@ class PostIndex extends React.Component{
     } 
 
     render(){          
-        const {posts, openModal} = this.props;
-       
+        const {currentUser, posts, openModal} = this.props;
+        const friendIds = [currentUser.id];
+        Object.values(currentUser.followers).map(
+            friend=> friendIds.push(friend.id));
+        Object.values(currentUser.following).map(
+            friend=> friendIds.push(friend.id));
+
         return(
             <div className='feed'> 
-                <StoryReel />
+                {/* <StoryReel /> */}
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                        <Avatar src={window.demouserimg}/> 
+                        <Avatar src={currentUser.photoUrl}/> 
                         <div onClick={this.openCreatePostModal}
                             key="openCreatePostModal"
                             className='messagesender__input'>
-                            What's on your mind
+                            What's on your mind? {currentUser.fname}
                         </div>          
                     </div>     
 
@@ -73,7 +78,9 @@ class PostIndex extends React.Component{
                         (post,idx)=> 
                         <PostIndexItem 
                             post={post}
-                            openModal = {openModal}
+                            openModal ={openModal}
+                            currentUser={currentUser}
+                            friendIds = {friendIds}
                             key ={idx}
                          />                    
                     )                    
