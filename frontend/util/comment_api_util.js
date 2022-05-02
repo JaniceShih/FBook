@@ -6,19 +6,23 @@ export const  fetchComments = () => (
     })
 )
 
-export const createComment = (comment)=> {
-  // debugger
-  return $.ajax({
-    url: 'api/comments',
-    method: 'POST'
+
+export const createComment = comment => {
+  debugger
+  return$.ajax({
+    url: `api/comments/`,
+    method: 'POST',
+    data: {comment}
   })
-}
+};
+
 
 export const updateComment = (comment) =>{
   // debugger
   return $.ajax({
     url: `api/comments/${comment.id}`,
-    method: 'PATCH'
+    method: 'PATCH',
+    data: {comment}
   })
 }
 

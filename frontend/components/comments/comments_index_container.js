@@ -4,12 +4,16 @@ import CommentIndex from './comments_index';
 
 
 const mSTP = state =>({
-    // posts: state.entities.posts,
+    comment: {
+        body: '',
+        post_id: null,
+        user_id: null,
+      },
     currentUser: state.entities.users[state.session.currentUser]    
 })
 
 const mDTP = dispatch =>({
-    createComment: ()=> dispatch(createComment())
+    createComment: (comment)=> dispatch(createComment(comment))
 })
 
 export default connect(mSTP, mDTP)(CommentIndex);

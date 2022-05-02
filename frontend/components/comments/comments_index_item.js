@@ -5,11 +5,9 @@ class CommentIndexItem extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            body: '',
-            post_id: this.props.postId,
-            user_id: this.props.userId
+            
         }
-        console.log(this.state);
+        // console.log(this.state);
     }
    
     render(){

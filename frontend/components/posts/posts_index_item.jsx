@@ -112,7 +112,7 @@ class PostIndexItem extends React.Component{
         </div> 
 
         <div className='post__comments'>
-          <CommentsContainer post={post}/>
+          <CommentsContainer post={post} />
         </div>    
    
       </div>
