@@ -370,7 +370,7 @@
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     // padding: 12px 16px;
-    top: 35px;
+    top: 3px;
     left: -150px;
     z-index: 1;
 }
@@ -529,3 +529,24 @@
     font-weight: 600;
 }
 
+.comments__create{
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.comments__item{
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.comments__input{
+    background-color: rgb(230, 230, 230);
+    border-radius: 999px;
+    padding: 20px 20px;
+    flex: 1;
+    margin-left: 10px;
+    font-size: larger;
+    outline: 0;
+}

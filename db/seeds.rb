@@ -26,3 +26,8 @@ Friend.create!(user_id: 1, friend_id: 7, status: "Friends")
 Friend.create!(user_id: 2, friend_id: 3, status: "Friends")
 Friend.create!(user_id: 2, friend_id: 3, status: "Friends")
 
+Comment.create!(body: "Slack clone", user_id: 2, post_id: 5)
+Comment.create!(body: "Splitwise clone", user_id: 3, post_id: 5)
+
+Comment.update(id:1, body: "Slack clone", user_id: 2, post_id: 5)
+id:2, body: "Splitwise: Split bills the easy way clone", user_id: 3, post_id: 5)

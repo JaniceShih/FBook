@@ -20,20 +20,7 @@ class PostIndex extends React.Component{
         this.props.fetchPosts();
     }
 
-    componentDidUpdate(prevProps) {      
  
-        // if (prevProps.posts !== this.state.posts) {
-        //     console.log(prevProps.posts);
-        //     // console.log("====");
-        //     console.log(this.state.posts);
-
-        //     // this.props.fetchPosts();
-        // }else{
-        //     console.log("same");
-
-        // }
-      }
-
     openCreatePostModal(e) {
         e.preventDefault();
         this.props.openModal({ type: 'create_post'

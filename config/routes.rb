@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]    
     resources :posts, only: [:create, :index, :show, :destroy, :update]
+    resources :comments, only: [:create, :index, :show, :destroy, :update]
   end
 
   root 'static_pages#root'

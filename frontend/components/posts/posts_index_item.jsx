@@ -10,6 +10,8 @@ import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutl
 
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 
+import CommentsContainer from '../comments/comments_index_container'
+
 class PostIndexItem extends React.Component{
   constructor(props){
     super(props);
@@ -43,8 +45,8 @@ class PostIndexItem extends React.Component{
     } 
 
     let post__menu = '';
-    console.log(post.user_id);
-    console.log( currentUser.id);
+    // console.log(post.user_id);
+    // console.log( currentUser.id);
     if(post.user_id === currentUser.id){
        post__menu = <p onClick={this.handleClick} className="post__menu">...</p>;
     }
@@ -107,7 +109,11 @@ class PostIndexItem extends React.Component{
             <ChatBubbleOutlineIcon /> 
             <p> Comment </p>
           </div>  
-        </div>     
+        </div> 
+
+        <div className='post__comments'>
+          <CommentsContainer post={post}/>
+        </div>    
    
       </div>
     )

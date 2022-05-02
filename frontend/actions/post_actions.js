@@ -1,4 +1,4 @@
-import * as PostApiUtil from '../util/post_aip_util';
+import * as PostApiUtil from '../util/post_api_util';
 
 
 export const RECEIVE_ALL_POST = 'RECEIVE_ALL_POST';
@@ -34,8 +34,8 @@ export const createPost = (post) => dispatch =>(
     )
 )
 
-export const updatePost = (postId) => dispatch =>(
-    PostApiUtil.updatePost(postId).then(
+export const updatePost = (post) => dispatch =>(
+    PostApiUtil.updatePost(post).then(
         post => dispatch(receivePost(post))
     )
 )
