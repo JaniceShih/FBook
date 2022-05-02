@@ -8,8 +8,7 @@ const mSTP = state =>({
         body: '',
         post_id: null,
         user_id: null,
-      },
-    currentUser: state.entities.users[state.session.currentUser]    
+      }   
 })
 
 const mDTP = dispatch =>({
