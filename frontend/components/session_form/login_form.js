@@ -40,12 +40,17 @@ class LoginForm extends React.Component {
 
     openSignupModal(e) {
         e.preventDefault();
-        this.props.openModal("create_user");
+        // debugger
+        this.props.openModal({type: "create_user"});
     };
     
 
 
     render(){
+
+        const errors = this.props.errors;
+        console.log(errors);
+
         return(
             <div className="login__page">
             <div className="grid grid--1x2 login"> 
@@ -86,6 +91,10 @@ class LoginForm extends React.Component {
                                     onChange={this.handleInput("password")}                              
                                 />
                             </label>
+
+                            <p className="loginError" style={errors.includes("Invalid username or password") ? ({ display: "" }) : ({ display: "none" })}>
+                            Invalid username or password
+                            </p>
                         </div>
 
                         <div >

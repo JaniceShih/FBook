@@ -6,6 +6,7 @@
 
   --color-primary: #1877f2;
   --color-secondary: #42b72a;
+  --color-gray: #b0b1b1;
 
   --color-border: #ccc;
   --border-radius: 30px;
@@ -27,7 +28,10 @@
 
 html {
   font-size: 62.5%;
+  // min-width: 750px;
 }
+
+
 
 img {
   width: 100%;
@@ -40,6 +44,7 @@ body {
   color: var(--color-body);
   
 }
+
 
 h1,
 h2,
@@ -148,7 +153,20 @@ p {
     margin: 5px;
     margin-left: 14px;
     margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 6px;
+}
+
+.login__form > p{
+  margin-bottom: 10px;
+}
+
+.login__form > div{
+  margin-bottom: 10px;
+}
+
+.loginError{
+  color: red;
 }
 
 @media screen and (min-width: 900px) {
@@ -160,6 +178,7 @@ p {
   }
   .form__input{
     display: block;
+   margin-top: 20px;
   }
 }
 
@@ -187,8 +206,8 @@ p {
   line-height: 48px; 
   font-weight: bold;
   cursor: pointer;
-  width: 80%;
-  margin: 1rem 2rem;
+  width: 95%;
+  // margin: 1rem 2rem;
 
 }
 
@@ -202,6 +221,11 @@ p {
 
 .btn--primary {
   background-color: var(--color-primary);
+
+}
+
+.btn--gray {
+  background-color: var(--color-gray);
 
 }
 

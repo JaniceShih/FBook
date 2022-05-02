@@ -34,8 +34,8 @@ export const createPost = (post) => dispatch =>(
     )
 )
 
-export const updatePost = (post) => dispatch =>(
-    PostApiUtil.updatePost(post).then(
+export const updatePost = (postId) => dispatch =>(
+    PostApiUtil.updatePost(postId).then(
         post => dispatch(receivePost(post))
     )
 )

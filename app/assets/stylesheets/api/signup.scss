@@ -1,43 +1,7 @@
-.modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(245, 245, 245, 0.7);
-    z-index: 10;
- 
-    .close-x {
-        position: absolute;
-        background-color: white;
-        cursor: pointer;
-        top: 15px;
-        right: 17px;
-        font-size: 25px;
-        font-weight: 900;
-     }
- 
- }
 
-
-  
-  .modal-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
  
  .signup-box {
-    //  position: absolute;
-     border: 1.5px solid white;
-     background-color: white;
-     box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
-     height: 450px;
-     width: 430px;
-     border-radius: 10px;
-     padding: 2px;
-     top: 15px;
+
  
      * {
          background-color: white;
@@ -80,22 +44,22 @@
      }
  
      .fnameError {
-         top: 160px;
+         top: 70px;
          left: 17px;
      }
  
      .lnameError {
-         top: 160px;
+         top: 70px;
          left: 225px;
      }
  
      .emailError {
-         top: 230px;
+         top: 140px;
          left: 17px;
      }
  
      .passwordError {
-         top: 300px;
+         top: 210px;
          left: 17px;
      }
  

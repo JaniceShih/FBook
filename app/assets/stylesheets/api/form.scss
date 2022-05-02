@@ -1,0 +1,161 @@
+ .form__box {
+    //  position: absolute;
+     border: 1.5px solid white;
+     background-color: white;
+     box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
+     height: 480px;
+     width: 500px;
+     border-radius: 10px;
+     padding: 2px;
+     top: 15px;
+
+          
+}
+
+
+.form__header--delete{
+    color: black;
+    font-size: medium;
+    text-align: left;
+}
+
+.from__delete{
+    height: 150px;
+}
+
+ 
+.form__header {
+    // margin: 13px 13px;
+    text-align: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.form__header > h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.form__header > p{
+    margin-top: 3px;
+}
+
+.form__avatar{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.form__avatar > p{
+    margin-left: 3px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.from__input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+     // background-color: #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.from__input > input{
+    width: 100%;
+    outline: 0px;
+}
+
+.custom-file-input {
+    color: transparent;
+    cursor: pointer;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.from__file{
+    flex: 1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;    
+    border: 1px solid darkgrey;    
+    // margin-left: 10px;
+    border-radius: 5px;    
+    padding: 5px 5px;
+    margin: 10px 10px;
+
+}
+
+.from__file > p{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    font-size: medium;
+    font-weight: 600;    
+}
+
+.from__file > .MuiSvgIcon-root{
+    font-size: x-large;
+    margin-right: 10px;
+ 
+}
+
+.from__file > img{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 98%; 
+    height: 96%;    
+}
+
+
+
+.from__file > input[type=file]{
+    text-align: center;
+    padding: 100px 100px;
+    background-color: #eff2f5 ;
+    border-radius: 5px;
+    height: 200px;
+    // font-size: large;
+    // font-weight: 600;
+
+}
+
+.from__submit{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;  
+    margin: 10px 10px; 
+}
+
+.from__submit__delete{
+    display: flex;
+}
+
+.from__submit__delete > button{
+    margin-right: 10px;
+    text-align: center;
+    padding: 0 25px;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.from__submit__delete--cancel{
+    background-color: white;
+    color: #2e81f4;
+    padding: 5px 5px;
+}
+
+.bn--post{
+    text-align: center;
+    font-size: medium;
+    margin: 10px 10px;
+}

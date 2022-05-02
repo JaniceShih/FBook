@@ -47,17 +47,19 @@ class SignupFrom extends React.Component{
 
     render() {
         // debugger
+        const errors = this.props.errors;
+
         return (
            
 
-            <div className="signup-box">
+            <div className="form__box signup-box">
 
-                <div className='signup-intro'>
-                 <ul>
+                <div className='form__header'>
+                 {/* <ul>
                         {this.props.errors.map((error, i) => {
                             return (<li key={`error-${i}`}>{error}</li>)
                         })}
-                </ul>
+                </ul> */}
 
                  <h2>Sign Up</h2>
                  <p>It’s quick and easy.</p>
@@ -67,7 +69,7 @@ class SignupFrom extends React.Component{
                  <div onClick={this.props.closeModal} className="close-x">X</div> 
                  <form >           
 
-                    <div>
+                    <div className="">
                         <label>
                             <input 
                                 type="text"
@@ -77,7 +79,9 @@ class SignupFrom extends React.Component{
                                 onChange={this.handleInput("fname")}                             
                             />
                         </label>
-
+                        <p className="fnameError" style={errors.includes("Fname can't be blank") ? ({ display: "" }) : ({ display: "none" })}>
+                            First name can't be blank!
+                        </p>
                         <label>
                             <input 
                                 type="text"
@@ -87,7 +91,9 @@ class SignupFrom extends React.Component{
                                 onChange={this.handleInput("lname")}                              
                             />
                         </label>
-
+                        <p className="lnameError" style={errors.includes("Lname can't be blank") ? ({ display: "" }) : ({ display: "none" })}>
+                            Last name can't be blank!
+                        </p>
                         <label>
                             <input 
                                 type="text"
@@ -98,6 +104,10 @@ class SignupFrom extends React.Component{
                             />
                         </label>
 
+                        <p className="emailError" style={errors.includes("Email can't be blank") || errors.includes("Email is invalid") ? ({ display: "" }) : ({ display: "none" })}>
+                            Email can't be blank or Email is invalid!
+                        </p>
+                        
                         <label>
                             <input
                                 type="password"
@@ -107,7 +117,9 @@ class SignupFrom extends React.Component{
                                 onChange={this.handleInput("password")}                           
                             />
                         </label>
-
+                        <p className="passwordError" style={errors.includes("Password is too short (minimum is 6 characters)") ? ({ display: "" }) : ({ display: "none" })}>
+                            Password is too short! (minimum is 6 characters)
+                        </p>
                         {/* <label> Birthday
                         <select id="month" className="form__input" onChange={this.handleInput("month")}>
                             <option value="1">January</option>
