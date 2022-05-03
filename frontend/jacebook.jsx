@@ -23,15 +23,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
     };
     
     // for testing   
-    window.demouser= {fname: 'Demo', lname: 'User', email: 'demo@gmail.com', birthday: '2002-02-5', gender: 'Female',  bio: '', password: '123456'};
+    // window.demouser= {fname: 'Demo', lname: 'User', email: 'demo@gmail.com', birthday: '2002-02-5', gender: 'Female',  bio: '', password: '123456'};
 
-    window.signup = signup;
-    window.login = login;
-    window.logout = logout;
-    window.receiveCurrentUser = receiveCurrentUser;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch; 
+    // window.signup = signup;
+    // window.login = login;
+    // window.logout = logout;
+    // window.receiveCurrentUser = receiveCurrentUser;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch; 
 
+    let port = process.env.PORT || 8080;
     
+    app.listen(port, ()=>{
+        console.log(`App is running at the port ${port}`);
+    });
+
     ReactDOM.render(<Root store={store} />, root);
 })
