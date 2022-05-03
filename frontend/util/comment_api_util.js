@@ -2,7 +2,7 @@
 // fetach All Comment
 export const  fetchComments = () => (
     $.ajax({
-      url: 'api/comments'
+      url: '/api/comments'
     })
 )
 
@@ -10,7 +10,7 @@ export const  fetchComments = () => (
 export const createComment = comment => {
   debugger
   return $.ajax({
-    url: 'api/comments',
+    url: '/api/comments',
     method: 'POST',
     data: {comment}
   })
@@ -20,7 +20,7 @@ export const createComment = comment => {
 export const updateComment = (comment) =>{
   // debugger
   return $.ajax({
-    url: `api/comments/${comment.id}`,
+    url: `/api/comments/${comment.id}`,
     method: 'PATCH',
     data: {comment}
   })
@@ -30,7 +30,7 @@ export const updateComment = (comment) =>{
 export const deleteComment = (commentId) =>{
 
   return $.ajax({
-    url: `api/comments/${commentId}`,
+    url: `/api/comments/${commentId}`,
     method: 'DELETE'
   })
 }

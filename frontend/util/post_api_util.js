@@ -2,14 +2,14 @@
 // fetach All Posts
 export const  fetchPosts = () => (
     $.ajax({
-      url: 'api/posts'
+      url: '/api/posts'
     })
 )
 
 export const createPost = (formData)=> {
   // debugger
   return $.ajax({
-    url: 'api/posts',
+    url: '/api/posts',
     method: 'POST',
     data: formData,
     contentType: false,
@@ -20,7 +20,7 @@ export const createPost = (formData)=> {
 export const updatePost = (formData) =>{
   // debugger
   return $.ajax({
-    url: `api/posts/${parseInt(formData.get('post[id]'))}`,
+    url: `/api/posts/${parseInt(formData.get('post[id]'))}`,
     method: 'PATCH',
     data: formData,
     contentType: false,
@@ -32,7 +32,7 @@ export const updatePost = (formData) =>{
 export const deletePost = (postId) =>{
 
   return $.ajax({
-    url: `api/posts/${postId}`,
+    url: `/api/posts/${postId}`,
     method: 'DELETE'
   })
 }
