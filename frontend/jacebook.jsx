@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // window.getState = store.getState;
     // window.dispatch = store.dispatch; 
 
-    // let port = process.env.PORT || 8080;
-
 
     ReactDOM.render(<Root store={store} />, root);
+
+    let port = process.env.PORT || 8080;
 })
