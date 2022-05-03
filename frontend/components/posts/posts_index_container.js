@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPosts, updatePost, deletePost } from '../../actions/post_actions';
+import {fetchComments} from '../../actions/comment_actions'
 import PostIndex from './posts_index';
 import { openModal } from "../../actions/modal_actions";
 
@@ -12,7 +13,8 @@ const mSTP = state =>({
 
 const mDTP = dispatch =>({
     fetchPosts: ()=> dispatch(fetchPosts()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    fetchComments: (CommentId) =>dispatch(fetchComments(CommentId))
 })
 
 export default connect(mSTP, mDTP)(PostIndex);

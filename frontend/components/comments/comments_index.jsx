@@ -6,8 +6,10 @@ import CommentIndexItem from './comments_index_item';
    
 class   CommentIndex extends React.Component{
     constructor(props){
-        super(props);
-        this.state = this.props.comment;
+        super(props);   
+        this.state = {
+            body: ''
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -20,8 +22,21 @@ class   CommentIndex extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
 
-         this.props.createComment(this.state);
+        const comment = {
+            body: this.state.body,
+            post_id: this.props.post.id,
+            user_id: this.props.currentUser.id
         }
+        
+        console.log(comment);
+
+        this.setState({
+            body: ''
+        })
+
+        this.props.createComment(comment);
+        this.props.fetchPosts();
+    }
 
     update(field){
         return e =>(
@@ -33,13 +48,8 @@ class   CommentIndex extends React.Component{
     
 
     render(){ 
-        const {post, currentUser} = this.props;
-        // console.log(post.id)
-        // console.log(currentUser.id)
-        // this.setState({
-        //     post_id: post.id,
-        //     user_id: currentUser.id
-        //   }) 
+        const {currentUser, post, deleteComment, fetchPosts} = this.props;
+        
 
 
         return(
@@ -51,6 +61,8 @@ class   CommentIndex extends React.Component{
                             comment={comment}
                             postId={post.id}
                             userId={currentUser.id}
+                            deleteComment = {deleteComment}
+                            fetchPosts= {fetchPosts}
                             key ={idx}
                         />
                          
@@ -66,7 +78,9 @@ class   CommentIndex extends React.Component{
                                 placeholder={" Write a Comment... "} 
                                 onChange={this.update('body')}                            
                                />   
-                            <button onClick={this.handleSubmit} type="submit">Hidden submit</button>   
+                            <button onClick={this.handleSubmit} type="submit"
+                            className='btn--hidden'
+                            >Hidden submit</button>   
                         </form>
                                          
                                 

@@ -9,8 +9,8 @@ export const  fetchComments = () => (
 
 export const createComment = comment => {
   debugger
-  return$.ajax({
-    url: `api/comments/`,
+  return $.ajax({
+    url: 'api/comments',
     method: 'POST',
     data: {comment}
   })
