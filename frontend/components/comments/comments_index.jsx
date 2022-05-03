@@ -76,7 +76,7 @@ class   CommentIndex extends React.Component{
             
 
             <div className='comments__create' >
-                        <Avatar src={currentUser.photoUrl}/> 
+                        <Avatar src={currentUser.photoUrl} src={currentUser.photoUrl} sx={{ height: '32px', width: '32px' }}/> 
                         <form>
 
                             <input className='comments__input'

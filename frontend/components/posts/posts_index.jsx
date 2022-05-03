@@ -41,7 +41,7 @@ class PostIndex extends React.Component{
                 <StoryReel />
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                        <Avatar src={currentUser.photoUrl}/> 
+                        <Avatar src={currentUser.photoUrl} sx={{ height: '40px', width: '40px' }}/> 
                         <div onClick={this.openCreatePostModal}
                             key="openCreatePostModal"
                             className='messagesender__input'>

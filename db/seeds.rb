@@ -29,3 +29,6 @@ Friend.create!(user_id: 2, friend_id: 3, status: "Friends")
 Comment.create!(body: "Slack clone", user_id: 2, post_id: 5)
 Comment.create!(body: "Splitwise clone", user_id: 3, post_id: 5)
 
+
+Like.create!(like_id: 5, like_type: "Post", user_id: 1)
+Like.create!(like_id: 5, like_type: "Post", user_id: 2)

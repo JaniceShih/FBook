@@ -185,7 +185,7 @@
 .storyreel{
     
     display: flex;
-    flex:1;
+    // flex:1;
     width: 100%;
     justify-content: center;
 }
@@ -701,6 +701,10 @@
     flex-direction: column;
 }
 
+.post__option--like > .MuiSvgIcon-root{
+    font-size: large;
+    color: #2e81f4;
+}
 
 
 .btn--hidden{

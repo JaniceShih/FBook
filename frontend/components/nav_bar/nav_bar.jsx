@@ -56,7 +56,9 @@ class NavBar extends React.Component {
 
                 <div  className='header__right'>
                     <div className="header__info">
-                        <Avatar src={currentUser.photoUrl}/>
+                        <Avatar src={currentUser.photoUrl} 
+                        sx={{ height: '28px', width: '28px' }}
+                        />
                         <h4> {currentUser.fname} </h4>
                         <div className='header__info--option'>
                             <AddIcon sx={{fontSize: 25 }}/>
