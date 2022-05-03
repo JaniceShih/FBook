@@ -22,7 +22,8 @@ class CommentIndexItem extends React.Component{
                             <p>{comment.body}</p>   
                         </div>
                         <div className='comments__body__bottom'>
-                        <button className='comments__buttom'>Like </button>                             <button className='comments__buttom'>Reply </button>      
+                        <button className='comments__buttom'>Like </button>                             
+                        <button className='comments__buttom'>Reply </button>      
 
                         </div>
                       
