@@ -17,7 +17,9 @@ function Friends(props) {
                  </h3>
                
                  <p>
-                      https://www.appacademy.io/
+                   <a href='https://www.appacademy.io/' target='_blank'>
+                      https://www.appacademy.io/  
+                   </a>
                  </p>
                  
               </div>

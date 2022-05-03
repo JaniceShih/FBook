@@ -7,6 +7,9 @@ if @post.photo.attached?
 end
 
 json.comments @post.comments.each do |comment| 
-    json.extract! comment, :id, :body
-    json.extract! comment.user, :fname
+    json.extract! comment, :id, :body, :user_id
+    json.extract! comment.user, :fname, :lname
+    if comment.user.photo.attached?
+        json.photoUrl url_for(comment.user.photo)
+    end
 end

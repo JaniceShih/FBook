@@ -48,7 +48,7 @@ class   CommentIndex extends React.Component{
     
 
     render(){ 
-        const {currentUser, post, deleteComment, fetchPosts} = this.props;
+        const {currentUser, post, deleteComment, fetchPosts, updateComment,openModal} = this.props;
         
 
 
@@ -56,13 +56,15 @@ class   CommentIndex extends React.Component{
             <div className='comments'>  
 
                 {
-                    Object.values(post.comments).map((comment,idx)=>
+                    Object.values(post.comments).reverse().map((comment,idx)=>
                         <CommentIndexItem 
                             comment={comment}
                             postId={post.id}
-                            userId={currentUser.id}
+                            currentUser={currentUser}
                             deleteComment = {deleteComment}
+                            updateComment = {updateComment}
                             fetchPosts= {fetchPosts}
+                            openModal={openModal}
                             key ={idx}
                         />
                          

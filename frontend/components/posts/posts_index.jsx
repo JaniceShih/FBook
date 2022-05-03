@@ -38,7 +38,7 @@ class PostIndex extends React.Component{
 
         return(
             <div className='feed'> 
-                {/* <StoryReel /> */}
+                <StoryReel />
                 <div className='messagesender' >
                     <div className='messagesender__top' >
                         <Avatar src={currentUser.photoUrl}/> 

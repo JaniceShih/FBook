@@ -4,8 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
-import PostIndexItemMenu from './posts_index_item_menu'
-
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
@@ -59,7 +57,7 @@ class PostIndexItem extends React.Component{
             <Avatar /> 
             <div className='post__topinfo'>
               <h3>{post.fname + ' ' + post.lname}</h3>
-              <p>{post.updated_at}</p>            
+              <p>{post.updated_at.toString().split('T')[0]}</p>            
             </div>
           </div>
           
@@ -68,13 +66,15 @@ class PostIndexItem extends React.Component{
                {post__menu}
 
               <div className="post__top__right--menu">
-                <div className="post__option">
+                <div className="post__option"
+                    onClick={this.openEditPostModal}>
                   <ModeEditOutlineOutlinedIcon />
-                  <button  onClick={this.openEditPostModal}> Edit Post </button> 
+                  <button  > Edit Post </button> 
                 </div> 
-                <div  className="post__option">
+                <div  className="post__option"
+                      onClick={this.openDeletePostModal}>
                   <DeleteForeverOutlinedIcon />
-                  <button onClick={this.openDeletePostModal}> Delete Post </button> 
+                  <button > Delete Post </button> 
                 </div>
                
               </div>                  

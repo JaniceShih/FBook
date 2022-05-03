@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
-import { createComment, fetchComments, deleteComment } from '../../actions/comment_actions';
+import { createComment, fetchComments, deleteComment, updateComment } from '../../actions/comment_actions';
 import {fetchPosts} from  '../../actions/post_actions';
 import CommentIndex from './comments_index';
+import { openModal } from "../../actions/modal_actions";
 
 
 const mSTP = state =>({
@@ -13,8 +14,10 @@ const mSTP = state =>({
 const mDTP = dispatch =>({
     createComment: (comment)=> dispatch(createComment(comment)),
     deleteComment: (commentId)=> dispatch(deleteComment(commentId)),
+    updateComment: (comment)=> dispatch(updateComment(comment)),
     fetchComments: ()=>dispatch(fetchComments()), 
     fetchPosts: ()=>dispatch(fetchPosts()),
+    openModal: (modal) => dispatch(openModal(modal))
 })
 
 export default connect(mSTP, mDTP)(CommentIndex);
