@@ -54,22 +54,26 @@ class   CommentIndex extends React.Component{
 
         return(
             <div className='comments'>  
+                <div id={`post__comment`+post.id} className="post__comment">
+                    {
+                        Object.values(post.comments).reverse().map((comment,idx)=>
+                            <CommentIndexItem 
+                                comment={comment}
+                                postId={post.id}
+                                currentUser={currentUser}
+                                deleteComment = {deleteComment}
+                                updateComment = {updateComment}
+                                fetchPosts= {fetchPosts}
+                                openModal={openModal}
+                                key ={idx}
+                            />
+                            
+                        )
+                    }
 
-                {
-                    Object.values(post.comments).reverse().map((comment,idx)=>
-                        <CommentIndexItem 
-                            comment={comment}
-                            postId={post.id}
-                            currentUser={currentUser}
-                            deleteComment = {deleteComment}
-                            updateComment = {updateComment}
-                            fetchPosts= {fetchPosts}
-                            openModal={openModal}
-                            key ={idx}
-                        />
-                         
-                    )
-                }
+                </div>
+
+            
 
             <div className='comments__create' >
                         <Avatar src={currentUser.photoUrl}/> 

@@ -89,7 +89,7 @@ class CommentIndexItem extends React.Component{
                 
         }else{
             comment_body = 
-                <div className="comments__item" >
+                <div  className="comments__item" >
                     <Avatar src={comment.photoUrl}/>                     
                     <div className ="comments__body">
                         <div  className='comments__body__top'>

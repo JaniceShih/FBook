@@ -18,6 +18,7 @@ class PostIndexItem extends React.Component{
     }
     this.openDeletePostModal = this.openDeletePostModal.bind(this);
     this.openEditPostModal = this.openEditPostModal.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   openDeletePostModal(e) {
@@ -28,6 +29,17 @@ class PostIndexItem extends React.Component{
  openEditPostModal(e){
   e.preventDefault();
   this.props.openModal({ type: 'edit_post', post: this.props.post });
+ }
+
+ handleClick(id){   
+   
+   const ele = document.getElementById('post__comment'+id);
+   if (ele.style.display === "none"){
+      console.log(id);
+      ele.style.display = 'flex'; 
+   }else{
+      ele.style.display = 'none'; 
+   }
  }
 
   render(){
@@ -46,8 +58,10 @@ class PostIndexItem extends React.Component{
     // console.log(post.user_id);
     // console.log( currentUser.id);
     if(post.user_id === currentUser.id){
-       post__menu = <p onClick={this.handleClick} className="post__menu">...</p>;
+       post__menu = <p className="post__menu">...</p>;
     }
+    
+    const commentsCount = post.comments.length;
 
 
     return (
@@ -91,14 +105,15 @@ class PostIndexItem extends React.Component{
           <img src={post.photoUrl} />
         </div>
 
-        {/* <div  className='post__options'>    
-          <div className='post__option'>
-            <button onClick={this.openDeletePostModal}> Delete </button> 
+        <div  className='post__likeComment'>    
+          <div className='post__option--like'>
+            Likes
           </div>
-          <div className='post__option'>
-            <button  onClick={this.openEditPostModal}> Edit </button> 
+          <div className='post__option--comment'>
+            <p onClick={()=>this.handleClick(post.id)}> {commentsCount} Comments </p>
           </div>    
-        </div> */}
+        </div>
+
 
         <div className='post__options'>
           <div className='post__option'>
@@ -107,11 +122,11 @@ class PostIndexItem extends React.Component{
           </div>  
           <div className='post__option'>
             <ChatBubbleOutlineIcon /> 
-            <p> Comment </p>
+            <p onClick={()=>this.handleClick(post.id)}>  Comment </p>
           </div>  
         </div> 
 
-        <div className='post__comments'>
+        <div id="CommentsContainer" className='post__comments'>
           <CommentsContainer post={post} currentUser={currentUser}/>
         </div>    
    
