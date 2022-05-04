@@ -1,0 +1,236 @@
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.profile__top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+   
+}
+
+.profile__bottom{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    background-color: #f1f2f5;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 300px;
+}
+
+
+.profile__coverpotp{
+    position: relative; ;
+    background: linear-gradient(#f1f2f5 , #e3e3e6 80%);
+    width: 100%;
+    min-height: 305px;  
+    border-bottom-left-radius: 30px 20px; 
+    border-bottom-right-radius: 30px 20px; 
+}
+
+.profile__coverbar{        
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    border-bottom-left-radius: 30px 20px; 
+    border-bottom-right-radius: 30px 20px; 
+}
+
+.profile__userinfo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+   
+    top: 150px;
+  
+}
+
+.profile__userinfo--name{
+   width: 450px;
+   color: black;
+   font-weight: 800;
+//    font-size: xx-large;
+}
+
+.profile__userinfo--avatar{
+    margin-top: 10px;
+    display: flex;
+
+}
+
+.profile__userinfo > h1{
+    color: black;
+    font-weight: 600;
+    width: 549px;
+}
+
+
+
+.profile__header{
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid lightgray;
+    position: relative;
+    height: 250px;
+    // width: 90%;
+}
+
+.profile__navbar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1031px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    // width: 90%;
+
+}
+
+
+.profile__option{
+    font-size: medium;
+    font-weight: 500;
+    color: rgb(90, 88, 88);
+    margin-right: 20px;
+    padding: 15px 15px;
+}
+
+
+.profile__body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // width: 1095px;
+    margin: 0 auto;
+}
+
+.profile__sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // position: relative;
+  
+}
+
+.profile__intro{
+     // width: 100%;
+     display: flex;
+     margin-top: 30px;
+     flex-direction: column;
+     background-color: white;
+     border-radius: 15px;
+     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+
+}
+
+.profile__img{
+    position:absolute;
+    top: -50px;
+    z-index: 100;
+}
+
+.profile__img > img{
+    border: 5px solid white;
+}
+
+
+
+@media screen and (min-width: 900px) {
+
+    .profile__navbar,.profile__header{
+        width: 1031px;
+    } 
+
+    .profile__coverpotp, .profile__coverbar{        
+        width: 1095px;        
+    }
+
+
+    .profile__header  {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+
+    .profile__body{
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: 1031px;
+        
+    }
+
+    .profile__sidebar{
+        flex: 0.6;        
+       
+    }
+
+    .profile__sidebar--info{
+        width: 100%;
+    }
+
+    .intro__top{
+        color: black;
+        font-size: x-large;
+        font-weight: 800;
+        padding: 10px 10px;
+    }
+
+    .intro__input{       
+        width: 95%;
+        background-color: #eff2f5;
+        padding: 10px 10px;      
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        font-size: medium;
+        font-weight: 600;
+        margin: 10px 10px;
+    }
+
+    .profile__sidebar--friends{
+        position: fixed;
+        bottom: 0;
+    }
+
+    .profile__posts{
+        display: flex;
+        flex-direction: column;
+        // justify-content: flex-end;
+        // align-items: flex-end;
+        width: 100%;
+        flex: 1;
+        margin-left: 10px;
+    }
+
+
+
+    .profile__userinfo{
+        left: 180px;
+        top: 30px;       
+    
+    }
+
+    .profile__header{
+        height: 142px;
+   
+    }
+
+}

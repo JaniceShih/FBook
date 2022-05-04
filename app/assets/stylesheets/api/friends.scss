@@ -1,0 +1,79 @@
+.friend__list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.friend__img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+    background-color: lightgray;
+}
+
+.friendcol > .friendrow__img > .friend__img{
+    width: 95px;
+    height: 95px;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+    background-color: lightgray;
+}
+
+.friendrow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 15px; 
+    width: calc(50% - 30px);
+    height: 115px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
+}
+
+.friendcol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px; 
+    width: calc(33.33% - 10px);
+    height: 150px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
+}
+
+
+
+.friendrow__img{
+    margin: 10px 15px;
+}
+
+
+
+.friendrow__info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.friendrow__info > p {
+    font-weight: 500;
+    font-size: medium;
+    // margin: 10px 10px;
+    color: black;
+
+}
+
+.friendcol > .friendrow__info > p {
+    font-weight: 500;
+    font-size: x-small;
+   
+    color: black;
+    text-align: left;
+
+}
+
+
+

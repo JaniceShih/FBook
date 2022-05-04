@@ -3,11 +3,12 @@ import { createComment, fetchComments, deleteComment, updateComment } from '../.
 import {fetchPosts} from  '../../actions/post_actions';
 import CommentIndex from './comments_index';
 import { openModal } from "../../actions/modal_actions";
+import {createLike, deleteLike} from '../../actions/like_actions';
 
 
 const mSTP = state =>({
     // posts: state.entities.posts,
-    // currentUser: state.entities.users[state.session.currentUser]   
+    currentUser: state.entities.users[state.session.currentUser], 
     comments : state.entities.comments
 })
 
@@ -17,7 +18,9 @@ const mDTP = dispatch =>({
     updateComment: (comment)=> dispatch(updateComment(comment)),
     fetchComments: ()=>dispatch(fetchComments()), 
     fetchPosts: ()=>dispatch(fetchPosts()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    createLike:(like) => dispatch(createLike(like)),
+    deleteLike:(likeId) => dispatch(deleteLike(likeId))
 })
 
 export default connect(mSTP, mDTP)(CommentIndex);

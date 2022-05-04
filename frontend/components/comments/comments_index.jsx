@@ -8,7 +8,8 @@ class   CommentIndex extends React.Component{
     constructor(props){
         super(props);   
         this.state = {
-            body: ''
+            body: '',
+            editstatus: 'edit'
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -48,15 +49,19 @@ class   CommentIndex extends React.Component{
     
 
     render(){ 
-        const {currentUser, post, deleteComment, fetchPosts, updateComment,openModal} = this.props;
+        const {currentUser, post, deleteComment, fetchPosts, updateComment,openModal, createLike,deleteLike} = this.props;
         
-
+        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
+        /> 
+        if(currentUser.photoUrl){
+            userImag =  <img src={currentUser.photoUrl} className="avatar avatar--small"/>           
+        }
 
         return(
             <div className='comments'>  
                 <div id={`post__comment`+post.id} className="post__comment">
                     {
-                        Object.values(post.comments).reverse().map((comment,idx)=>
+                        Object.values(post.comments).map((comment,idx)=>
                             <CommentIndexItem 
                                 comment={comment}
                                 postId={post.id}
@@ -65,6 +70,8 @@ class   CommentIndex extends React.Component{
                                 updateComment = {updateComment}
                                 fetchPosts= {fetchPosts}
                                 openModal={openModal}
+                                createLike={createLike}
+                                deleteLike={deleteLike}   
                                 key ={idx}
                             />
                             
@@ -76,7 +83,7 @@ class   CommentIndex extends React.Component{
             
 
             <div className='comments__create' >
-                        <Avatar src={currentUser.photoUrl} src={currentUser.photoUrl} sx={{ height: '32px', width: '32px' }}/> 
+                        {userImag}
                         <form>
 
                             <input className='comments__input'

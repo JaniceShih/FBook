@@ -32,3 +32,5 @@ Comment.create!(body: "Splitwise clone", user_id: 3, post_id: 5)
 
 Like.create!(like_id: 5, like_type: "Post", user_id: 1)
 Like.create!(like_id: 5, like_type: "Post", user_id: 2)
+Like.create!(like_id: 1, like_type: "Comment", user_id: 1)
+Like.create!(like_id: 2, like_type: "Comment", user_id: 2)

@@ -42,7 +42,7 @@ export const updateLike = (likes) => dispatch =>(
 
 export const deleteLike = likeId => dispatch => (
     LikeApiUtil.deleteLike(likeId)
-      .then(() => dispatch(removeComment(likeId)))
+      .then(() => dispatch(removeLike(likeId)))
 )
 
 

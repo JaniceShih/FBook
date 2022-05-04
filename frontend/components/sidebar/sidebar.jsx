@@ -13,11 +13,19 @@ function SideBar(props) {
     const {currentUser} = props;
     // console.log(currentUser.fname);
     // const photoUrl = (currentUser.photoUrl) ? currentUser.photoUrl : 'none';
+
+    let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
+            /> ;
+   
+    if(currentUser.photoUrl){
+        userImag =  <img src={currentUser.photoUrl} className="avatar avatar--small"/>            
+    }
+
     return (
         <div className='sidebar'>
             {/* <SidebarItem src={photoUrl} title={currentUser.fname+' '+ currentUser.lname}/>  */}
             <div className='sidebarrow'>
-                <Avatar src={currentUser.photoUrl} sx={{ height: '28px', width: '28px' }}/>
+                {userImag}
                 <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
             </div>  
             <SidebarItem Icon={LocalHospitalIcon} title='COVID-19 Tracker'/>

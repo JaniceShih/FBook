@@ -32,7 +32,7 @@ function Friends(props) {
               (friend, idx)=> <FriendList  friend = {friend} key={idx}/>)
         }
 
-{
+        {
           currentUser.following.map(
             (friend, idx)=> <FriendList  friend = {friend} key={idx}/>)
         }

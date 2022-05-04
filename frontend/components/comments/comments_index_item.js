@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from '@mui/material'
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 
 class CommentIndexItem extends React.Component{
     constructor(props){
@@ -12,6 +13,8 @@ class CommentIndexItem extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.openDeleteCommentModal = this.openDeleteCommentModal.bind(this);
+        this.handleCreateLike = this.handleCreateLike.bind(this);
+        this.handleDeleteLike= this.handleDeleteLike.bind(this);
     }
 
     updateEditStatus(){
@@ -37,7 +40,7 @@ class CommentIndexItem extends React.Component{
             user_id: this.props.currentUser.id
         }
         
-        console.log(comment);
+        // console.log(comment);
 
         this.props.updateComment(comment);
         this.props.fetchPosts();
@@ -53,6 +56,23 @@ class CommentIndexItem extends React.Component{
           })    
         )      
     }
+
+    handleCreateLike(e){
+        e.preventDefault();
+        const like = {like_id: this.props.comment.id, like_type: "Comment", user_id: this.props.currentUser.id};
+        // console.log(like);
+        this.props.createLike(like);
+        this.props.fetchPosts();
+     }
+    
+     handleDeleteLike(likeId){
+       return (e)=>{
+        // console.log("delete:" + likeId);
+        this.props.deleteLike(likeId);
+        this.props.fetchPosts();
+       }
+    
+    }
    
     render(){
         const {comment, deleteComment, updateComment, fetchPosts, postId, currentUser,openModal} = this.props;
@@ -62,17 +82,43 @@ class CommentIndexItem extends React.Component{
         //     post_id: this.props.postId,
         //     user_id: this.props.userId
         //   }) 
+        // console.log(comment.id);
 
         let comment__menu = '';
         if(comment.user_id === currentUser.id){ 
             comment__menu = <p className="comments__menu"> ... </p>;
         }
 
+        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
+        /> 
+        if(currentUser.photoUrl){
+            userImag =  <img src={comment.photoUrl} className="avatar avatar--medium"/>           
+        }
+
+        // const likesCount = comment.likes.length;
+
+        let  likesCount =  '' ;
+        if (comment.likes.length > 0) {
+            likesCount =  <p className='jacebook__color--active comments__body__bottom--likescount'> <ThumbUpOutlinedIcon />  {comment.likes.length}</p>
+        }
+
+        let likeId = 0;
+        let likesThumbup = "";
+        // console.log(comment.likes);
+        comment.likes.map(liker=> {
+          if (liker.user_id === currentUser.id) {
+            
+            likesThumbup= "jacebook__color--active"
+            likeId=liker.id
+          }  
+        })
+       
+
         let comment_body = '';
         if (this.state.editstatus === 'edit'){
             comment_body = 
                 <div className='comments__create' >
-                    <Avatar src={comment.photoUrl}/>                 
+                    {userImag}
                     <form>
                             <input className='comments__input'
                                 value={this.state.body}
@@ -97,8 +143,17 @@ class CommentIndexItem extends React.Component{
                             <p>{comment.body}</p>  
                             
                         </div>
-                        <div className='comments__body__bottom'>
-                             <button className='comments__buttom'>Like </button> 
+                        <div className='comments__body__bottom--likes '>
+                             <p> 
+                                 
+                                 {/* <button className={'comments__buttom ' + likesThumbup}> Like </button>   */}
+                                 <button 
+                                    className={'comments__buttom ' + likesThumbup}
+                                    onClick={(likesThumbup === '') ? this.handleCreateLike : this.handleDeleteLike(likeId) }>Like</button>  
+
+                             
+                             </p>
+                             {likesCount}
                         </div>                    
                     </div>
                     <div className="comments__body__right">

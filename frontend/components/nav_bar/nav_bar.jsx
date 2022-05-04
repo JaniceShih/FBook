@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
@@ -25,11 +26,20 @@ class NavBar extends React.Component {
     
     render() {
         const {currentUser} = this.props;
-        // console.log(currentUser);
+
+        let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
+            /> 
+        if(currentUser.photoUrl){
+            userImag =  <img src={currentUser.photoUrl} className="avatar avatar--small"/>            
+        }
+
+   
         return (
             <div className='header'>
                 <div  className='header__left'>
-                    <img src={window.jacebook} />
+
+                    <Link to="/"><img src={window.jacebook} className="header__logo"/></Link>
+                    
                     <div className='header__input'>
                         <SearchIcon />
                         <input type="text" placeholder='Search JsceBook'/>
@@ -56,12 +66,14 @@ class NavBar extends React.Component {
 
                 <div  className='header__right'>
                     <div className="header__info">
-                        <Avatar src={currentUser.photoUrl} 
-                        sx={{ height: '28px', width: '28px' }}
-                        />
-                        <h4> {currentUser.fname} </h4>
+                        <Link to={`/users/${currentUser.id}`}>                            
+                            <div className="header__info--user"> 
+                                {userImag}
+                                {currentUser.fname}
+                            </div>
+                        </Link>
                         <div className='header__info--option'>
-                            <AddIcon sx={{fontSize: 25 }}/>
+                                <AddIcon sx={{fontSize: 25 }}/>
                         </div>
                         <div className='header__info--option'>
                             <ForumIcon sx={{fontSize: 25 }}/>

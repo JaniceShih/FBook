@@ -1,6 +1,6 @@
 import React from 'react';
 import PostIndexItem from './posts_index_item'
-import StoryReel from '../feed/storyreel'
+
 
 import { Avatar } from '@mui/material'
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
@@ -29,19 +29,27 @@ class PostIndex extends React.Component{
     } 
 
     render(){          
-        const {currentUser, posts, openModal} = this.props;
+        const {currentUser, posts, openModal, user,fetchPosts, createLike, deleteLike, userId} = this.props;
         const friendIds = [currentUser.id];
         Object.values(currentUser.followers).map(
             friend=> friendIds.push(friend.id));
         Object.values(currentUser.following).map(
             friend=> friendIds.push(friend.id));
 
+        
+            let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
+        /> 
+        if(currentUser.photoUrl){
+            userImag =  <img src={currentUser.photoUrl} className="avatar avatar--medium"/>           
+        }
+
+
         return(
-            <div className='feed'> 
-                <StoryReel />
+            
+           <>
                 <div className='messagesender' >
                     <div className='messagesender__top' >
-                        <Avatar src={currentUser.photoUrl} sx={{ height: '40px', width: '40px' }}/> 
+                        {userImag}
                         <div onClick={this.openCreatePostModal}
                             key="openCreatePostModal"
                             className='messagesender__input'>
@@ -63,17 +71,21 @@ class PostIndex extends React.Component{
 
                 {
                     Object.values(posts).reverse().map(                      
-                        (post,idx)=> 
+                        (post,idx)=>                         
                         <PostIndexItem 
                             post={post}
                             openModal ={openModal}
                             currentUser={currentUser}
                             friendIds = {friendIds}
+                            fetchPosts={fetchPosts}
+                            createLike={createLike}
+                            deleteLike={deleteLike}
+                            userId={userId}
                             key ={idx}
                          />                    
                     )                    
                 }
-            </div>
+            </>
         )
     }
 }
