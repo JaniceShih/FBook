@@ -1,1 +1,1 @@
-web:node jacebook.jsx
+web: bin/boot
