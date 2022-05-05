@@ -17,6 +17,11 @@ import ForumIcon from '@mui/icons-material/Forum';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
+import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
+
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
+import { fontSize } from '@mui/system';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -42,7 +47,7 @@ class NavBar extends React.Component {
                     
                     <div className='header__input'>
                         <SearchIcon />
-                        <input type="text" placeholder='Search JsceBook'/>
+                        <input type="text" placeholder='Search JaceBook' title='In Construction.' disabled/>
                     </div>
                 </div>
 
@@ -50,17 +55,37 @@ class NavBar extends React.Component {
                     <div className='header__option header__option--active'> 
                         <HomeIcon  fontSize="large" />
                     </div>
-                    <div className='header__option'> 
-                        <FlagIcon  fontSize="large" />
-                    </div>
-                    <div className='header__option'> 
+
+             
+                    {/* <div className='header__option'> 
                         <SubscriptionsOutlinedIcon  fontSize="large" />
-                    </div>
+                    </div> */}
+
                     <div className='header__option'> 
-                        <StorefrontOutlinedIcon  fontSize="large" />
+                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}> 
+                            <StorefrontOutlinedIcon  fontSize="large" />
+                        </Tooltip >
+                        
+                    </div>   
+                    
+                    <div className='header__option'>
+                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}> 
+                            <VideoLibraryIcon  fontSize="large" />
+                        </Tooltip >
+                        
+                    </div>           
+                    <div className='header__option'> 
+                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}>
+                            <FlagIcon  fontSize="large" />
+                        </Tooltip >
+                        
                     </div>
-                    <div className='header__option'>              
-                        <SupervisedUserCircleRoundedIcon  fontSize="large" />
+
+                    <div className='header__option'>  
+                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}>
+                            <SupervisedUserCircleRoundedIcon  fontSize="large" />
+                        </Tooltip >            
+                        
                     </div>
                 </div>
 
@@ -68,25 +93,30 @@ class NavBar extends React.Component {
                     <div className="header__info">
                         <Link to={`/users/${currentUser.id}`}>                            
                             <div className="header__info--user"> 
-                                {userImag}
-                                {currentUser.fname}
+                                <div className="header__info--userimg">{userImag}</div>
+                                <div className="header__info--username">{currentUser.fname}</div>                                
                             </div>
                         </Link>
-                        <div className='header__info--option'>
+                        {/* <div className='header__info--option'>
                                 <AddIcon sx={{fontSize: 25 }}/>
-                        </div>
-                        <div className='header__info--option'>
+                        </div> */}
+                        {/* <div className='header__info--option'>
                             <ForumIcon sx={{fontSize: 25 }}/>
                         </div>
                         <div className='header__info--option'>
                             <NotificationsActiveIcon sx={{fontSize: 25 }}/>
-                        </div>
-                        <div className='header__info--option'>
+                        </div> */}
+                        <div className='header__info--option--expane'>
                             <ExpandMoreIcon sx={{fontSize: 25 }}/>
+
+                            <div className='header__info--menu'>
+                                <div onClick={this.props.logout} className='header__info--option'>
+                                        <a > <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> Log Out</a>
+                                </div>
+                               
+                            </div>
                         </div>
-                        <div className='header__info--option'>
-                            <a onClick={this.props.logout}> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
-                        </div>
+                        {/*  */}
                       
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Avatar } from '@mui/material'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
 class CommentIndexItem extends React.Component{
     constructor(props){
@@ -99,7 +100,7 @@ class CommentIndexItem extends React.Component{
 
         let  likesCount =  '' ;
         if (comment.likes.length > 0) {
-            likesCount =  <p className='jacebook__color--active comments__body__bottom--likescount'> <ThumbUpOutlinedIcon />  {comment.likes.length}</p>
+            likesCount =  <p className='jacebook__color--active comments__body__bottom--likescount'> <ThumbUpRoundedIcon />  {comment.likes.length}</p>
         }
 
         let likeId = 0;

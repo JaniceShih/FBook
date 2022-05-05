@@ -7,6 +7,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SupervisedUserCircleRoundedIcon from '@mui/icons-material/SupervisedUserCircleRounded';
 import { Avatar } from '@mui/material'
 
 function SideBar(props) {
@@ -28,13 +29,16 @@ function SideBar(props) {
                 {userImag}
                 <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
             </div>  
-            <SidebarItem Icon={LocalHospitalIcon} title='COVID-19 Tracker'/>
-            <SidebarItem Icon={EmojiFlagsIcon} title='Pages' />     
-            <SidebarItem Icon={PeopleIcon} title='Friends' />   
-            <SidebarItem Icon={ChatIcon} title='Messenger' />   
-            <SidebarItem Icon={StorefrontIcon} title='Marketplace' />   
-            <SidebarItem Icon={VideoLibraryIcon} title='Videos' />   
-            <SidebarItem Icon={ExpandMoreIcon} title='More' />   
+            <SidebarItem Icon={LocalHospitalIcon} title='COVID-19 Tracker' currentUser = {currentUser}/>
+            {/* <SidebarItem Icon={PeopleIcon} title='Friends' />               */}
+
+            <SidebarItem Icon={ExpandMoreIcon} title=' Future Function' currentUser = {currentUser}/>  
+            <SidebarItem Icon={SupervisedUserCircleRoundedIcon} title='Friends' currentUser = {currentUser}/>
+            <SidebarItem Icon={ChatIcon} title='Messenger' currentUser = {currentUser}/>   
+            <SidebarItem Icon={StorefrontIcon} title='Marketplace' currentUser = {currentUser}/>   
+            <SidebarItem Icon={VideoLibraryIcon} title='Videos' currentUser = {currentUser}/>   
+            <SidebarItem Icon={EmojiFlagsIcon} title='Pages' currentUser = {currentUser}/> 
+            
 
         </div>
     )

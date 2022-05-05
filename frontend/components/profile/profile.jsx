@@ -71,14 +71,14 @@ class Profile extends React.Component{
                             </div>
                             <div  className='profile__userinfo'>
                                 <div className='profile__userinfo--name'><h1>{user.fname+` `+user.lname}</h1></div>
-                                <div><p>{freinds.length} Friends</p></div>
-                                <div className='profile__userinfo--avatar'>
-                                    <Avatar sx={{ height: '28px', width: '28px' }} />
+                                <div><p>{freinds.length} Friends </p></div>
+                                {/* <div className='profile__userinfo--avatar'>
+                                    
                                     <Avatar sx={{ height: '28px', width: '28px' }} />
                                     <Avatar sx={{ height: '28px', width: '28px' }} />
                                     <Avatar sx={{ height: '28px', width: '28px' }} />
 
-                                </div>
+                                </div> */}
                             </div>
                             {/* <div>
                                 edit profile

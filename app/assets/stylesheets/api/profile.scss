@@ -61,8 +61,8 @@
 
 .profile__userinfo--name{
    width: 450px;
-   color: black;
-   font-weight: 800;
+   color: rgb(45, 45, 45);
+   font-weight: 500;
 //    font-size: xx-large;
 }
 
@@ -73,8 +73,8 @@
 }
 
 .profile__userinfo > h1{
-    color: black;
-    font-weight: 600;
+    color: rgb(45, 45, 45);
+    font-weight: 500;
     width: 549px;
 }
 
@@ -186,10 +186,22 @@
         width: 100%;
     }
 
-    .intro__top{
-        color: black;
-        font-size: x-large;
-        font-weight: 800;
+    .intro__header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .intro__heading{
+        color: rgb(45, 45, 45);
+        font-size: large;
+        font-weight: 600;
+        padding: 10px 10px;
+    }
+
+    .intro__link{
+        color: #2584ff;
+        font-size: medium;
+        // font-weight: 600;
         padding: 10px 10px;
     }
 

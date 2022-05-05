@@ -1,5 +1,3 @@
-
-
 /* hearder */
 .header{
     // min-width: 650px;
@@ -37,6 +35,17 @@
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+    padding: 5px 10px;
+}
+
+.header__info--userimg{
+    margin-right: 10px;
+}
+
+.header__info--username{
+    font-size: medium;
+    font-weight: 600;
+    color: black;
 }
 
 .avatar{
@@ -70,7 +79,7 @@
 
 .header__center{
     display: none;
-    flex: 1;
+    // flex: 1;
     justify-content: center;
 }
 
@@ -110,7 +119,9 @@
 }
 
 .header__info--option {
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px 5px;
 }
 
 .header__info > h4{
@@ -121,6 +132,35 @@
     background-color: #f1f2f5;
     border-radius: 10px;
 }
+
+.header__info--option--expane:hover {
+    background-color: #f1f2f5;
+    border-radius: 10px;
+    display: block;
+}
+.header__info--option--expane:hover > .header__info--menu{
+
+    display: block;
+}
+
+.header__info--menu{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    // border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 5px;
+    top: 35px;
+    right: 5px;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+// .header__info--menu > a{
+//     background-color: #f1f2f5;
+// }
 
 .header__right{
     display: none;

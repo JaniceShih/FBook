@@ -11,6 +11,8 @@ import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined
 import CommentsContainer from '../comments/comments_index_container'
 
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
+import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
+
 
 class PostIndexItem extends React.Component{
   constructor(props){
@@ -150,7 +152,7 @@ class PostIndexItem extends React.Component{
 
         <div  className='post__likeComment'>    
           <div className='post__option--like'>
-             <ThumbUpOutlinedIcon />  {likesCount}
+             <ThumbUpRoundedIcon /> {likesCount}
           </div>
           <div className='post__option--comment'>
             <p onClick={()=>this.handleClick(post.id)}> {commentsCount} Comments </p>
