@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-demoUser = User.create!(fname: 'Demo', lname: 'User', email: 'demo@gmail.com', birthday: '2002-02-5', gender: 'Female',  bio: '', password: '123456')
+# demoUser = User.create!(fname: 'Demo', lname: 'User', email: 'demo@gmail.com', birthday: '2002-02-5', gender: 'Female',  bio: '', password: '123456')
 
 joe = User.create!(fname: 'Joe', lname: 'Delaney', email: 'joe@gmail.com', birthday: '1999-06-06', gender: 'Male',  bio: '', password: '123456')
-dom = User.create!(fname: 'Dominic', lname: 'Swaby', email: 'dom@gmail.com', birthday: '1986-05-2', gender: 'Male',  bio: '', password: '123456')
+dom = qui
 jackson = User.create!(fname: 'Jackson', lname: 'Dooley', email: 'jackson@gmail.com', birthday: '2002-05-2', gender: 'Male',  bio: '', password: '123456')
 kevin = User.create!(fname: 'Kevin', lname: 'Tung', email: 'kevin@gmail.com', birthday: '1992-05-2', gender: 'Male',  bio: '', password: '123456')
 nick = User.create!(fname: 'Nicholas', lname: 'Angleton', email: 'nick@gmail.com', birthday: '1992-05-2', gender: 'Male',  bio: '', password: '123456')
