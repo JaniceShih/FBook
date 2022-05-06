@@ -1,5 +1,5 @@
 {
-  "name": "fbook",
+  "name": "jacebook",
   "private": true,
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -14,7 +14,7 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "v16.13.2",
+    "node": "16.13.2",
     "npm": "8.1.2"
   },
   "keywords": [],
