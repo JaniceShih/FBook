@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from '@mui/material'
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -85,9 +86,15 @@ class PostForm extends React.Component {
                   value={this.state.body}
                   placeholder={` What's on your mind? `} 
                   onChange={this.update('body')}/>                    
-                </div>               
-
+                </div>              
+                
                 <div className="from__file">
+                    <div className="from__file--edit">
+                        <input type="file" 
+                        className="from__file--edit custom-file-input" 
+                        onChange={this.handleFile}/>
+                      
+                    </div>
                     <input type="file" 
                       className="custom-file-input" 
                       onChange={this.handleFile}/>                  

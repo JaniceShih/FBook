@@ -17,7 +17,7 @@ function StoryReel() {
         <Story 
             image="https://cdn.hackersandslackers.com/2019/02/SQLpt1-3.jpg"
             profileSrc=""
-            title="SQL"
+            title="SQL/Postgresql"
         />
          <Story 
             image="https://rubyonrails.org/assets/images/opengraph.png"

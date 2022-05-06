@@ -73,7 +73,7 @@ class SignupFrom extends React.Component{
                         <label>
                             <input 
                                 type="text"
-                                className="fname-field"
+                                className="sinpu__input fname-field"
                                 value={this.state.fname}
                                 placeholder="First Name"  
                                 onChange={this.handleInput("fname")}                             
@@ -85,7 +85,7 @@ class SignupFrom extends React.Component{
                         <label>
                             <input 
                                 type="text"
-                                className="lname-field"
+                                className="sinpu__input lname-field"
                                 value={this.state.lname}
                                 placeholder="Last Name" 
                                 onChange={this.handleInput("lname")}                              
@@ -97,7 +97,7 @@ class SignupFrom extends React.Component{
                         <label>
                             <input 
                                 type="text"
-                                className="form__input"
+                                className="sinpu__input"
                                 value={this.state.email}
                                 placeholder="Email or phone number"  
                                 onChange={this.handleInput("email")}                           
@@ -111,7 +111,7 @@ class SignupFrom extends React.Component{
                         <label>
                             <input
                                 type="password"
-                                className="form__input"
+                                className="sinpu__input"
                                 value={this.state.password}
                                 placeholder="New Password"  
                                 onChange={this.handleInput("password")}                           

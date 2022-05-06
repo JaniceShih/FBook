@@ -36,11 +36,18 @@
          color: red;
      }
      .fname-field {
+
          width: 189px;
      }
  
      .lname-field {
+       
          width: 189px;
+     }
+
+     .sinpu__input{
+        font-size: 15px;
+        padding: 10px;
      }
  
      .fnameError {
@@ -69,7 +76,7 @@
          font-size: 20px;
          font-weight: 600;
          color: white;
-         padding: 10px;
+         padding: 0px;
          width: 200px;
          margin-top: 15px;
          margin-left: 115px;

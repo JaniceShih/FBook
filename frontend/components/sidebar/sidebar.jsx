@@ -29,11 +29,12 @@ function SideBar(props) {
                 {userImag}
                 <h4>{currentUser.fname+' '+ currentUser.lname}</h4>
             </div>  
-            {/* <SidebarItem Icon={PeopleIcon} title='Friends' />               */}
+            {/* <SidebarItem Icon={PeopleIcon} title='Friends' />           
+                */}
 
             <SidebarItem Icon={ExpandMoreIcon} title=' Future Function' currentUser = {currentUser}/>  
-            <SidebarItem Icon={LocalHospitalIcon} title='COVID-19 Tracker' currentUser = {currentUser}/>
-            <SidebarItem Icon={SupervisedUserCircleRoundedIcon} title='Friends' currentUser = {currentUser}/>
+            <SidebarItem Icon={LocalHospitalIcon} title='COVID-19 Tracker' currentUser = {currentUser}/>           
+            <SidebarItem Icon={SupervisedUserCircleRoundedIcon} title='Friends' currentUser = {currentUser} linkurl={`/users/${currentUser.id}/friends`}/>
             <SidebarItem Icon={ChatIcon} title='Messenger' currentUser = {currentUser}/>   
             <SidebarItem Icon={StorefrontIcon} title='Marketplace' currentUser = {currentUser}/>   
             <SidebarItem Icon={VideoLibraryIcon} title='Videos' currentUser = {currentUser}/>   

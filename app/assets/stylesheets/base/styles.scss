@@ -29,6 +29,7 @@
 html {
   font-size: 62.5%;
   // min-width: 750px;
+  
 }
 
 
@@ -95,7 +96,7 @@ p {
 /* Blocks */
 .block {
   --padding-vertical: 1rem;
-  padding: var(--padding-vertical) 2rem;
+  padding: var(--padding-vertical) 5rem;
 }
 
 .block__header {
@@ -113,8 +114,8 @@ p {
 }
 
 .block__heading {
-  font-size: 5rem;
-  font-weight: 600;
+  font-size: 6rem;
+  font-weight: 700;
   color: var(--color-primary);
 }
 
@@ -128,7 +129,13 @@ p {
 }
 
 
-/* flex */
+/* login*/
+
+.login__demo{
+  margin: 2px 2px;
+  padding: 5px 5px; 
+  border-bottom: 1px solid lightgray;
+}
 
 .login{
   text-align: center;
@@ -145,9 +152,9 @@ p {
   /* flex-grow: 1;  */
 }
 
-.login__form .form__input{
+ .form__input{
     border: 1.5px solid var(--color-border);
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     width: 90%;
     margin: 5px;
@@ -155,6 +162,7 @@ p {
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 6px;
+    text-align: left;
 }
 
 .login__form > p{
@@ -168,6 +176,17 @@ p {
 .loginError{
   color: red;
 }
+.form__input{
+  display: block;
+  margin-top: 20px;
+}
+
+.form__input:focus {
+  border: 1px solid #2e81f4;
+  // border-radius: 30px;
+  // padding: 15px;
+}
+
 
 @media screen and (min-width: 900px) {
   .login {
@@ -176,10 +195,7 @@ p {
   .login__form{
     width: 80%;
   }
-  .form__input{
-    display: block;
-   margin-top: 20px;
-  }
+
 }
 
 
@@ -219,14 +235,15 @@ p {
 }
 
 
-.btn--primary {
-  background-color: var(--color-primary);
 
-}
 
 .btn--gray {
   background-color: var(--color-gray);
 
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
 }
 
 

@@ -3,7 +3,7 @@
      border: 1.5px solid white;
      background-color: white;
      box-shadow: 0 0 7px rgb(207, 207, 207), 0 0 10px rgb(238, 238, 238);
-     height: 480px;
+    //  min-height: 430px;
      width: 500px;
      border-radius: 10px;
      padding: 2px;
@@ -37,7 +37,9 @@
 }
 
 .form__header > p{
-    margin-top: 3px;
+    margin: 5px;
+    font-size: medium;
+    text-align: left;
 }
 
 .form__avatar{
@@ -66,12 +68,20 @@
     margin-bottom: 20px;
 }
 
+.from__input > input:focus {
+    border: 1px solid #2e81f4;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+
 .from__input > input{
     width: 100%;
     outline: 0px;
 }
 
 .custom-file-input {
+    position: relative;
     color: transparent;
     cursor: pointer;
 }
@@ -91,6 +101,15 @@
     padding: 5px 5px;
     margin: 10px 10px;
 
+}
+
+
+.from__file--edit{
+    position:absolute;
+    z-index: 999;
+    height: 178px;
+    width: 100%;
+    // border: 1px solid orange;
 }
 
 .from__file > p{
@@ -158,4 +177,8 @@
     text-align: center;
     font-size: medium;
     margin: 10px 10px;
+}
+
+.btn--primary:hover{
+    background-color: #0454c5;
 }

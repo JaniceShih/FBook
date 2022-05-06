@@ -14,11 +14,26 @@ export const login = user => (
       data: { user }
     })
   };
-  
+
+
   export const logout = () => (
     $.ajax({
       method: 'DELETE',
       url: '/api/session'
     })
   );
+
+
+  export const updateUser = formData => {
+    debugger
+    return $.ajax({
+      method: 'PATCH',
+      url: `/api/users/${parseInt(formData.get('user[id]'))}`,
+      method: 'PATCH',
+      data: formData,
+      contentType: false,
+      processData: false
+    })
+  };
+  
   

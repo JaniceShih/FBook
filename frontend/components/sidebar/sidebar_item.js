@@ -2,14 +2,17 @@
 import React from 'react'
 import { Link} from 'react-router-dom';
 
-function SidebarItem({src, Icon, title, currentUser}) {
+function SidebarItem({src, Icon, title, currentUser, linkurl}) {
+  let show = <h4>{title}</h4>   
+
+  if(linkurl){
+    show = <Link to={linkurl}><h4>{title}</h4></Link>  
+  }
+
   return (
-    <div className='sidebarrow'>
-        {/* {src && <Avatar src={src} />} */}     
+    <div className='sidebarrow'>           
         {Icon && <Icon />}
-        {/* <Link to={`/users/${currentUser.id}/friends`}> */}
-        <h4>{title}</h4>
-        {/* </Link> */}
+        {show}
     </div>
   )
 }

@@ -12,15 +12,17 @@ function Friends(props) {
                 <img src={window.aa}/>
             </div>
             <div className='ad__info'>
-                  <h3>
-                    Change your career. Change your life
+                <h3>
+                    Change your career. 
                  </h3>
-               
-                 <p>
+                 <h3>
+                 Change your life
+                 </h3>
+                 
                    <a href='https://www.appacademy.io/' target='_blank'>
                       https://www.appacademy.io/  
                    </a>
-                 </p>
+                 
                  
               </div>
           </div>

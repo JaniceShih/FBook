@@ -42,10 +42,13 @@ class NavBar extends React.Component {
         return (
             <div className='header'>
                 <div  className='header__left'>
-
-                    <Link to="/"><img src={window.jacebook} className="header__logo"/></Link>
-                    
+                    <div>
+                         <Link to="/">
+                             <img src={window.jacebook} className="header__logo" />
+                        </Link>
+                    </div>
                     <div className='header__input'>
+                        
                         <SearchIcon />
                         <input type="text" placeholder='Search JaceBook' title='In Construction.' disabled/>
                     </div>
@@ -82,9 +85,9 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className='header__option'>  
-                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}>
+                        <Tooltip  title={<p style={{ color: "white", fontSize: '14px'}}>In Construction</p>}> 
                             <SupervisedUserCircleRoundedIcon  fontSize="large" />
-                        </Tooltip >            
+                         </Tooltip >          
                         
                     </div>
                 </div>
@@ -97,6 +100,15 @@ class NavBar extends React.Component {
                                 <div className="header__info--username">{currentUser.fname}</div>                                
                             </div>
                         </Link>
+                     
+                        <div onClick={this.props.logout}>
+                               <p>
+                                 <a> <ExitToAppRoundedIcon sx={{fontSize: 25 }}/> </a>
+                                </p>
+                                   
+                        </div>
+                               
+                      
                         {/* <div className='header__info--option'>
                                 <AddIcon sx={{fontSize: 25 }}/>
                         </div> */}
@@ -106,7 +118,7 @@ class NavBar extends React.Component {
                         <div className='header__info--option'>
                             <NotificationsActiveIcon sx={{fontSize: 25 }}/>
                         </div> */}
-                        <div className='header__info--option--expane'>
+                        {/* <div className='header__info--option--expane'>
                             <ExpandMoreIcon sx={{fontSize: 25 }}/>
 
                             <div className='header__info--menu'>
@@ -115,7 +127,7 @@ class NavBar extends React.Component {
                                 </div>
                                
                             </div>
-                        </div>
+                        </div> */}
                         {/*  */}
                       
                     </div>

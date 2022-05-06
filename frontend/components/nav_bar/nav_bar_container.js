@@ -6,7 +6,7 @@ import NavBar from "./nav_bar";
 import {logout} from "../../actions/session_actions" 
 
 
-const mstp = (state) => {
+const mstp = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.currentUser]
     };

@@ -65,121 +65,111 @@ class PostIndexItem extends React.Component{
 }
 
   render(){
-    const {currentUser, post, friendIds, userId} = this.props; 
-    // console.log(userId);
-    // console.log(post.user_id);
+      const {currentUser, post, friendIds, userId} = this.props; 
 
-    if ((typeof userId !== "undefined") && userId!==post.user_id){
-      return null;
-    }
-
-    // const friendIds = [currentUser.id];
-    // Object.values(followers).map(friend=> console.log(friendIds.push(friend.id)));
-    // Object.values(following).map(friend=> console.log(friendIds.push(friend.id)));
-
-
-    if(!friendIds.includes(post.user_id)) {
+      if ((typeof userId !== "undefined") && userId!==post.user_id){
         return null;
-    } 
+      }
+      if(!friendIds.includes(post.user_id)) {
+          return null;
+      } 
 
-    let post__menu = '';
-    // console.log(post.user_id);
-    // console.log( currentUser.id);
-    if(post.user_id === currentUser.id){
-       post__menu = <p className="post__menu">...</p>;
-    }
-    
-    const commentsCount = post.comments.length;
-    const likesCount = post.likes.length;
+      let post__menu = '';
 
-    let userImag =  <Avatar sx={{ height: '40px', width: '40px' }}
-    /> 
-    if(post.user_photoUrl){
-        userImag =  <img src={post.user_photoUrl} className="avatar avatar--medium"/>            
-    }
+      if(post.user_id === currentUser.id){
+        post__menu = <p className="post__menu">...</p>;
+      }
+      
+      const commentsCount = post.comments.length;
+      const likesCount = post.likes.length;
 
-    let likeId = 0;
-    let likesThumbup = "";
-    post.likes.map(liker=> {
-      if (liker.user_id === currentUser.id) {
-        likesThumbup= "jacebook__color--active"
-        likeId=liker.id
-      }  
-    })
+      let userImag =  <Avatar sx={{ height: '40px', width: '40px' }}
+      /> 
+      if(post.user_photoUrl){
+          userImag =  <img src={post.user_photoUrl} className="avatar avatar--medium"/>            
+      }
 
-    // console.log(likesThumbup);
+      let likeId = 0;
+      let likesThumbup = "";
+      post.likes.map(liker=> {
+        if (liker.user_id === currentUser.id) {
+          likesThumbup= "jacebook__color--active"
+          likeId=liker.id
+        }  
+      })
 
-    return (
-      <div className='post'>
-        <div className='post__top'>
-          <div className='post__top--left'>
-           {userImag}
-            <div className='post__topinfo'>
-              <h3>{post.fname + ' ' + post.lname}</h3>
-              <p>{post.updated_at.toString().split('T')[0]}</p>            
+
+      return (
+        <div className='post'>
+          <div className='post__top'>
+            <div className='post__top--left'>
+            {userImag}
+              <div className='post__topinfo'>
+                <h3>{post.fname + ' ' + post.lname}</h3>
+                <p>{post.updated_at.toString().split('T')[0]}</p>            
+              </div>
             </div>
+            
+            <div className="post__top__right">
+
+                {post__menu}
+
+                <div className="post__top__right--menu">
+                  <div className="post__option"
+                      onClick={this.openEditPostModal}>
+                    <ModeEditOutlineOutlinedIcon />
+                    <button  > Edit Post </button> 
+                  </div> 
+                  <div  className="post__option"
+                        onClick={this.openDeletePostModal}>
+                    <DeleteForeverOutlinedIcon />
+                    <button > Delete Post </button> 
+                  </div>
+                
+                </div>                  
+            </div>
+            
+
           </div>
           
-          <div className="post__top__right">
-
-               {post__menu}
-
-              <div className="post__top__right--menu">
-                <div className="post__option"
-                    onClick={this.openEditPostModal}>
-                  <ModeEditOutlineOutlinedIcon />
-                  <button  > Edit Post </button> 
-                </div> 
-                <div  className="post__option"
-                      onClick={this.openDeletePostModal}>
-                  <DeleteForeverOutlinedIcon />
-                  <button > Delete Post </button> 
-                </div>
-               
-              </div>                  
+          <div className="post__buttom">      
+              <p>{post.body}</p>             
           </div>
-          
-
-        </div>
-        
-        <div className="post__buttom">      
-            <p>{post.body}</p>             
-        </div>
-  
-        <div className="post__image">
-          <img src={post.photoUrl} />
-        </div>
-
-        <div  className='post__likeComment'>    
-          <div className='post__option--like'>
-             <ThumbUpRoundedIcon /> {likesCount}
+    
+          <div className="post__image">
+            <img src={post.photoUrl} />
           </div>
-          <div className='post__option--comment'>
-            <p onClick={()=>this.handleClick(post.id)}> {commentsCount} Comments </p>
+
+          <div  className='post__likeComment'>    
+            <div className='post__option--like'>
+              <ThumbUpRoundedIcon /> {likesCount}
+            </div>
+            <div className='post__option--comment'>
+              <p onClick={()=>this.handleClick(post.id)}> {commentsCount} Comments </p>
+            </div>    
+          </div>
+
+
+          <div className='post__options'>
+            <div className={`post__option ` + likesThumbup}>
+              <ThumbUpOffAltIcon /> 
+              <p className={likesThumbup}> 
+              <button onClick={(likesThumbup === '') ? this.handleCreateLike : this.handleDeleteLike(likeId) }>Like</button>  
+              </p>
+            </div>  
+            <div className='post__option'>
+              <ChatBubbleOutlineIcon /> 
+              <p onClick={()=>this.handleClick(post.id)}>  Comment </p>
+            </div>  
+          </div> 
+
+          <div id="CommentsContainer" className='post__comments'>
+            <CommentsContainer post={post} currentUser={currentUser}/>
           </div>    
+    
         </div>
-
-
-        <div className='post__options'>
-          <div className={`post__option ` + likesThumbup}>
-            <ThumbUpOffAltIcon /> 
-            <p className={likesThumbup}> 
-            <button onClick={(likesThumbup === '') ? this.handleCreateLike : this.handleDeleteLike(likeId) }>Like</button>  
-            </p>
-          </div>  
-          <div className='post__option'>
-            <ChatBubbleOutlineIcon /> 
-            <p onClick={()=>this.handleClick(post.id)}>  Comment </p>
-          </div>  
-        </div> 
-
-        <div id="CommentsContainer" className='post__comments'>
-          <CommentsContainer post={post} currentUser={currentUser}/>
-        </div>    
-   
-      </div>
-    )
-  }  
+      )
+    }  
 }
 
 export default PostIndexItem
