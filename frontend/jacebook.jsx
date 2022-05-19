@@ -35,5 +35,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     ReactDOM.render(<Root store={store} />, root);
 
-    // let port = process.env.PORT || 8080;
+    var server = http.createServer((req, res) => {
+        //your stuff
+      });
+      
+      server.listen(process.env.PORT || 80, () => {
+        console.log("Listening on port 80");
+      });
 })
