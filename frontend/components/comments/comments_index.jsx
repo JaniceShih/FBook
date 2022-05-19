@@ -27,9 +27,8 @@ class   CommentIndex extends React.Component{
             body: this.state.body,
             post_id: this.props.post.id,
             user_id: this.props.currentUser.id
-        }
-        
-        console.log(comment);
+        }       
+
 
         this.setState({
             body: ''

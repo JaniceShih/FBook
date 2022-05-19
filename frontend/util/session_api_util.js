@@ -25,7 +25,6 @@ export const login = user => (
 
 
   export const updateUser = formData => {
-    debugger
     return $.ajax({
       method: 'PATCH',
       url: `/api/users/${parseInt(formData.get('user[id]'))}`,

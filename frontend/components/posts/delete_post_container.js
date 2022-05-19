@@ -14,7 +14,6 @@ class DeltePost extends React.Component {
 
   render() {
     const {post, deletePost, closeModal} = this.props;
-    console.log(post);
 
     return (
         <div className='form__box from__delete'>   

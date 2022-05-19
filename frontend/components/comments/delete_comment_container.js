@@ -15,7 +15,6 @@ class DelteComment extends React.Component {
 
   render() {
     const {comment, deleteComment, closeModal} = this.props;
-    console.log(comment);
 
     return (
         <div className='form__box from__delete'>   

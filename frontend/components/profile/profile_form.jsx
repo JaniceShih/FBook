@@ -41,7 +41,6 @@ class ProfileForm extends React.Component {
         if (this.state.photoFile) {
           formData.append('user[photo]', this.state.photoFile);
         }
-        debugger
         this.props.updateUser(formData);
         this.props.closeModal()
     }
@@ -51,7 +50,6 @@ class ProfileForm extends React.Component {
     render(){
 
         const {user, errors} = this.props;
-        console.log(user);
 
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="profile__img--circle"/> : null;
 

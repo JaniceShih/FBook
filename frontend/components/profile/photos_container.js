@@ -12,8 +12,7 @@ class Photos extends React.Component {
     const {user, posts} = this.props;
 
     const photos = [];
-    console.log(posts);
-    Object.values(posts).map(post => {       
+     Object.values(posts).map(post => {       
          if(post.user_id === user.id) 
             {photos.push(post.photoUrl)} 
         })
