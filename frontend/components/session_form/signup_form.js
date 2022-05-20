@@ -30,7 +30,6 @@ class SignupFrom extends React.Component{
             gender: this.state.gender,
             bio: ''
         } 
-        // debugger
         this.props.signup(singupUser).then(
             () => this.props.closeModal()
         );;
@@ -46,7 +45,6 @@ class SignupFrom extends React.Component{
 
 
     render() {
-        // debugger
         const errors = this.props.errors;
 
         return (

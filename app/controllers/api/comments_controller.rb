@@ -4,21 +4,17 @@ class Api::CommentsController < ApplicationController
 
     def index
         @comments = Comment.all
-        # debugger
         render :index
     end
 
     def show
         @comment = Comment.find_by(id: params[:id])
-        # debugger
         render :show
     end
 
     def create
-        # debugger
         @comment = Comment.new(comment_params)       
         if @comment.save!
-            # debugger
             render :show
         else
             redner json: @comment.errors.full_messages, status: 422

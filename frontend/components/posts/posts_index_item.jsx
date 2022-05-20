@@ -40,7 +40,6 @@ class PostIndexItem extends React.Component{
  handleClick(id){   
   const ele = document.getElementById('post__comment'+id);
   if (ele.style.display === "none"){
-      // console.log(id);
       ele.style.display = 'flex'; 
   }else{
       ele.style.display = 'none'; 
@@ -50,14 +49,12 @@ class PostIndexItem extends React.Component{
  handleCreateLike(e){
     e.preventDefault();
     const like = {like_id: this.props.post.id, like_type: "Post", user_id: this.props.currentUser.id};
-    // console.log("create");
     this.props.createLike(like);
     this.props.fetchPosts();
  }
 
  handleDeleteLike(likeId){
    return (e)=>{
-    // console.log("delete:" + likeId);
     this.props.deleteLike(likeId);
     this.props.fetchPosts();
    }

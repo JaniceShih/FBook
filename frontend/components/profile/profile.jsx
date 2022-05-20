@@ -26,8 +26,6 @@ class Profile extends React.Component{
         const params = url.split("/");
         const tagName = params[params.length -1];
 
-        // console.log(user);
-
         let userImag =  <Avatar 
                             className="story__avatar--white" sx={{ height: '178px', width: '178px' }} /> 
 
@@ -63,7 +61,6 @@ class Profile extends React.Component{
              if(post.user_id === user.id) 
                 {photos.push(post.photoUrl)} 
             })
-        //  console.log(photos);
 
         return (
             <>

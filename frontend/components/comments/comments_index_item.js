@@ -26,7 +26,6 @@ class CommentIndexItem extends React.Component{
 
    
     openDeleteCommentModal(e) {
-        // debugger
         e.preventDefault();
         this.props.openModal({ type: 'delete_comment', comment: this.props.comment });
     }
@@ -40,8 +39,7 @@ class CommentIndexItem extends React.Component{
             post_id: this.props.postId,
             user_id: this.props.currentUser.id
         }
-        
-        // console.log(comment);
+
 
         this.props.updateComment(comment);
         this.props.fetchPosts();
@@ -61,14 +59,13 @@ class CommentIndexItem extends React.Component{
     handleCreateLike(e){
         e.preventDefault();
         const like = {like_id: this.props.comment.id, like_type: "Comment", user_id: this.props.currentUser.id};
-        // console.log(like);
+    
         this.props.createLike(like);
         this.props.fetchPosts();
      }
     
      handleDeleteLike(likeId){
        return (e)=>{
-        // console.log("delete:" + likeId);
         this.props.deleteLike(likeId);
         this.props.fetchPosts();
        }
@@ -77,14 +74,6 @@ class CommentIndexItem extends React.Component{
    
     render(){
         const {comment, deleteComment, updateComment, fetchPosts, postId, currentUser,openModal} = this.props;
-        // console.log(this.props.postId);
-        // console.log(this.props.userId);
-        // this.setState({
-        //     post_id: this.props.postId,
-        //     user_id: this.props.userId
-        //   }) 
-        // console.log(comment.id);
-
         let comment__menu = '';
         if(comment.user_id === currentUser.id){ 
             comment__menu = <p className="comments__menu"> ... </p>;
@@ -105,7 +94,7 @@ class CommentIndexItem extends React.Component{
 
         let likeId = 0;
         let likesThumbup = "";
-        // console.log(comment.likes);
+    
         comment.likes.map(liker=> {
           if (liker.user_id === currentUser.id) {
             

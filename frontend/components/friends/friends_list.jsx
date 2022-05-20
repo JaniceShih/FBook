@@ -3,7 +3,6 @@ import React from 'react'
 
 function FriendList(props) {
   const {friend} = props;
-  //  console.log(props);
   return (
     <div className='sidebarrow'>
         <Avatar src={friend.photoUrl}/>

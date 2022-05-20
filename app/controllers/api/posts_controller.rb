@@ -4,13 +4,11 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all
-        # debugger
         render :index
     end
 
     def show
         @post = Post.find_by(id: params[:id])
-        # debugger
         render :show
     end
 
@@ -18,7 +16,6 @@ class Api::PostsController < ApplicationController
         
         @post = Post.new(post_params)       
         if @post.save!
-            # debugger
             render :show
         else
             redner json: @post.errors.full_messages, status: 422

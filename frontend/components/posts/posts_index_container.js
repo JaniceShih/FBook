@@ -14,7 +14,6 @@ const mSTP = (state,ownProps) =>{
   
     if(typeof ownProps.match !== "undefined"){  
         stateParams['userId'] =  parseInt(ownProps.match.params.userId);
-        // console.log(stateParams);
     }
 
     return stateParams

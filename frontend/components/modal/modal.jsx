@@ -7,7 +7,6 @@ import DeleteCommentContainer from '../comments/delete_comment_container'
 import EditProfileContainer from '../profile/edit_profile_container'
 
 const Modal = ({modal, closeModal}) => {
-    // debugger
     if (!modal) {
         return null;
     }

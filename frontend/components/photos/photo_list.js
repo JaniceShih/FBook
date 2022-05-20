@@ -4,8 +4,6 @@ class  PhotosList extends React.Component {
 
   render(){
     const {flexdirection, photo} = this.props;
-    //  console.log(photo);
-
     return (      
       <div className={flexdirection}>          
           <div className='photorow__img'>

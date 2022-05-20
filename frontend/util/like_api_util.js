@@ -8,7 +8,6 @@ export const  fetchLikes = () => (
 
 
 export const createLike = like => {
-  // debugger
   return $.ajax({
     url: '/api/likes',
     method: 'POST',
@@ -18,7 +17,6 @@ export const createLike = like => {
 
 
 export const updateLike = (like) =>{
-  // debugger
   return $.ajax({
     url: `/api/likes/${like.id}`,
     method: 'PATCH',

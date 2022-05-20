@@ -6,10 +6,8 @@ const postsReducer = (state={}, action) => {
 
     switch (action.type) {
         case RECEIVE_ALL_POST:
-            // debugger
             return action.posts    
         case RECEIVE_POST:
-            // debugger
             nextState[action.post.id] = action.post
             return nextState; 
         case REMOVE_POST:

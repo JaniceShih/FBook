@@ -40,16 +40,13 @@ class LoginForm extends React.Component {
 
     openSignupModal(e) {
         e.preventDefault();
-        // debugger
         this.props.openModal({type: "create_user"});
     };
     
 
 
     render(){
-
         const errors = this.props.errors;
-        // console.log(errors);
 
         return(
             <div className="login__page">

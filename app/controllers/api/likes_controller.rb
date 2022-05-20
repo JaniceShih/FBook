@@ -4,21 +4,17 @@ class Api::LikesController < ApplicationController
 
     def index
         @likes = Like.all
-        # debugger
         render :index
     end
 
     def show
         @like = Like.find_by(id: params[:id])
-        # debugger
         render :show
     end
 
     def create
-        # debugger
         @like = Like.new(like_params)       
         if @like.save!
-            # debugger
             render :show
         else
             redner json: @like.errors.full_messages, status: 422

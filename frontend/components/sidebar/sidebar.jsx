@@ -12,8 +12,6 @@ import { Avatar } from '@mui/material'
 
 function SideBar(props) {
     const {currentUser} = props;
-    // console.log(currentUser.fname);
-    // const photoUrl = (currentUser.photoUrl) ? currentUser.photoUrl : 'none';
 
     let userImag =  <Avatar sx={{ height: '28px', width: '28px' }}
             /> ;

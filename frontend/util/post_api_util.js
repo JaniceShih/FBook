@@ -8,7 +8,6 @@ export const  fetchPosts = () => (
 )
 
 export const createPost = (formData)=> {
-  // debugger
   return $.ajax({
     url: '/api/posts',
     method: 'POST',
@@ -19,7 +18,6 @@ export const createPost = (formData)=> {
 }
 
 export const updatePost = (formData) =>{
-  // debugger
   return $.ajax({
     url: `/api/posts/${parseInt(formData.get('post[id]'))}`,
     method: 'PATCH',
