@@ -8,7 +8,7 @@ Languages: Javascript, Ruby, HTML5, CSS3
 
 Front-end: React-Redux
 
-Back-end: Rails (including Websockets via Rails Action Cable)
+Back-end: Rails 
 
 Database: PostgreSQL
 
